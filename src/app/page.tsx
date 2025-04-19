@@ -9,7 +9,8 @@ import Navigation from '@/components/navigation';
 import AudioPlayer from '@/components/music_player'
 
 
-export default async function Home() {
+
+export default function Home() {
   return (
     <main className="bg-white text-black relative">
       <div className="absolute top-0 left-0 w-full h-full z-50">
