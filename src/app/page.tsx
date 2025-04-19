@@ -13,9 +13,9 @@ import AudioPlayer from '@/components/music_player'
 export default function Home() {
   return (
     <main className="bg-white text-black relative">
-      <div className="absolute top-0 left-0 w-full h-full z-50">
+      <div className="absolute top-0 left-0 z-50">
         <AudioPlayer src={"/welcome/music.mp3"} songTitle={"thap drill tu do - nghiem tong prod. gaz"} songImage={"/welcome/music.png"} />
-        </div>
+      </div>
       <Navigation />
       <SectionWelcome />
       <SectionInfor />
