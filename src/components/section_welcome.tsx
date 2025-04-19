@@ -49,7 +49,7 @@ export default function SectionWelcome() {
       <div className="relative h-[36vh] w-[60vw] z-20 rounded-md">
         {/* 🐟 Fish Head */}
         <motion.div
-          className="absolute -top-9 left-1/2 -translate-x-1/2 sm:-top-[25vh] sm:left-1/2 sm:-translate-x-1/2 z-50"
+          className="absolute -top-8 left-1/2 -translate-x-1/2 sm:-top-[25vh] sm:left-1/2 sm:-translate-x-1/2 z-50"
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -115,7 +115,7 @@ export default function SectionWelcome() {
 
         {/* 🎥 Video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover scale-95"
+          className="absolute inset-0 w-full h-full object-cover scale-95 z-35"
           autoPlay
           loop
           muted
@@ -130,7 +130,7 @@ export default function SectionWelcome() {
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex gap-2 relative sm:ml-0 ml-3"
+            className={`flex gap-2 relative sm:ml-0  ${isFlying ? " ml-0" : " ml-3"} text-nowrap`} 
           >
             {isFlying ? "BYE!" : "HI!"} MY NAME IS
             <motion.span
@@ -149,7 +149,7 @@ export default function SectionWelcome() {
             initial={{ opacity: 0, x: -100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="my-1 sm:my-0"
+            className="my-1 sm:my-0 text-nowrap"
           >
             I&apos;M AI ENGINEER
           </motion.h1>
