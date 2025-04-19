@@ -1,4 +1,5 @@
-'use server'
+// 'use server'
+'use client'
 import SectionWelcome from '@/components/section_welcome';
 import SectionInfor from '@/components/section_infor';
 import SectionExperience from '@/components/section_experience';
