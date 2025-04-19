@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { ArrowUp, ArrowDown } from 'lucide-react';
+import { useFishStore } from "@/store/fishStore";
 
 
 type Section = {
@@ -21,6 +22,7 @@ export default function Navigation() {
   const [currentSection, setCurrentSection] = useState(0);
   const prevSectionRef = useRef(currentSection);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { isFlying } = useFishStore();
 
   const getNextSection = (current: number): number => 
     current === sections.length - 1 ? 0 : current + 1;
@@ -79,7 +81,7 @@ export default function Navigation() {
                 index === currentSection ? 'text-gray-900' : 'text-gray-400'
               }`}
             >
-              {section.name}
+              {section.id === 'welcome' && isFlying ? 'GOODBYE' : section.name}
             </div>
           ))}
         </div>

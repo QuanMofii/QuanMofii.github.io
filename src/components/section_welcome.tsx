@@ -58,11 +58,11 @@ export default function SectionWelcome() {
             animate={
               isFlying
                 ? {
-                    y: -1000,
-                    opacity: 0,
+                    y: [0, 50, -2000],
                     transition: {
-                      duration: 5,
-                      ease: [0.19, 1, 0.22, 1],
+                      duration: 2.5,
+                      ease: "linear",
+                      times: [0, 0.8, 1],
                     },
                   }
                 : {}
@@ -79,24 +79,7 @@ export default function SectionWelcome() {
           </motion.div>
         </motion.div>
 
-        {/* 🐟 Body (clickable) */}
-        <motion.div
-        className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-45"
-        initial={{ opacity: 0, y: -50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-
-      >
-        <BaseImage
-          src="/welcome/fish_body2.png"
-          alt="Fish Body"
-          width={250}
-          height={250}
-          className="pointer-events-auto select-none w-[190px] min-w-[190px] sm:min-w-[370px] sm:w-[35vw] sm:h-[35vh] object-contain"
-          draggable={false}
-          
-        />
-      </motion.div>
+        
 
         {/* 🐟 Fish Tail */}
         <motion.div
@@ -109,11 +92,11 @@ export default function SectionWelcome() {
             animate={
               isFlying
                 ? {
-                    y: -1000,
-                    opacity: 0,
+                    y: [0, 50, -2000],
                     transition: {
-                      duration: 5,
-                      ease: [0.19, 1, 0.22, 1],
+                      duration: 2.5,
+                      ease: "linear",
+                      times: [0, 0.8, 1],
                     },
                   }
                 : {}
@@ -149,7 +132,7 @@ export default function SectionWelcome() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex gap-2 relative sm:ml-0 ml-3"
           >
-            HI! MY NAME IS
+            {isFlying ? "BYE!" : "HI!"} MY NAME IS
             <motion.span
               key={displayText}
               className="
