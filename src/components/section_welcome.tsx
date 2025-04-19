@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { motion, useInView,  } from "framer-motion";
+import BaseImage from "@/components/base_image";
+import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useFishStore } from "@/store/fishStore";
 
@@ -15,7 +15,6 @@ export default function SectionWelcome() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -47,50 +46,53 @@ export default function SectionWelcome() {
       ref={sectionRef}
       className="h-screen relative w-full flex items-center justify-center bg-white"
     >
-
       <div className="relative h-[36vh] w-[60vw] z-20 rounded-md">
         {/* 🐟 Fish Head */}
         <motion.div
-          className="absolute -top-[25vh] left-1/2 -translate-x-1/2 z-50"
+          className="absolute -top-9 left-1/2 -translate-x-1/2 sm:-top-[25vh] sm:left-1/2 sm:-translate-x-1/2 z-50"
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.div
-            animate={isFlying ? {
-              y: -1000,
-              opacity: 0,
-              transition: {
-                duration: 5,
-                ease: [0.19, 1, 0.22, 1],
-              },
-            } : {}}
+            animate={
+              isFlying
+                ? {
+                    y: -1000,
+                    opacity: 0,
+                    transition: {
+                      duration: 5,
+                      ease: [0.19, 1, 0.22, 1],
+                    },
+                  }
+                : {}
+            }
           >
-            <Image
+            <BaseImage
               src="/welcome/fish_head.png"
               alt="Fish Head"
               width={0}
               height={0}
               sizes="15vw"
-              className="min-w-[240px] w-[39vw] h-[39vh] object-contain"
+              className="w-33 min-h-[143px] min-w-33 h-[143px] sm:min-w-[240px] sm:w-[39vw] sm:h-[39vh] object-contain"
             />
           </motion.div>
         </motion.div>
-        
-         {/* 🐟 Body (clickable) */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-45"
+
+        {/* 🐟 Body (clickable) */}
+        <motion.div
+        className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-45"
         initial={{ opacity: 0, y: -50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
 
       >
-        <Image
+        <BaseImage
           src="/welcome/fish_body2.png"
           alt="Fish Body"
           width={250}
           height={250}
-          className="pointer-events-auto select-none min-w-[240px] w-[35vw] h-[35vh] object-contain"
+          className="pointer-events-auto select-none w-[190px] min-w-[190px] sm:min-w-[370px] sm:w-[35vw] sm:h-[35vh] object-contain"
           draggable={false}
           
         />
@@ -98,28 +100,32 @@ export default function SectionWelcome() {
 
         {/* 🐟 Fish Tail */}
         <motion.div
-          className="absolute -bottom-[29vh] left-1/2 -translate-x-8/15 z-50"
+          className="absolute -bottom-37 left-1/2 -translate-x-8/15 sm:-bottom-[37.5vh] sm:left-1/2 sm:-translate-x-8/15 z-50"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.div
-            animate={isFlying ? {
-              y: -1000,
-              opacity: 0,
-              transition: {
-                duration: 5,
-                ease: [0.19, 1, 0.22, 1],
-              },
-            } : {}}
+            animate={
+              isFlying
+                ? {
+                    y: -1000,
+                    opacity: 0,
+                    transition: {
+                      duration: 5,
+                      ease: [0.19, 1, 0.22, 1],
+                    },
+                  }
+                : {}
+            }
           >
-            <Image
+            <BaseImage
               src="/welcome/fish_tail.png"
               alt="Fish Tail"
               width={0}
               height={0}
               sizes="15vw"
-              className="min-w-[240px] w-[35vw] h-[35vh] object-contain"
+              className="w-33 min-h-[266px] min-w-33 h-[40vh] sm:min-w-[240px] sm:w-[40vw] sm:h-[40vh] object-contain"
             />
           </motion.div>
         </motion.div>
@@ -136,15 +142,21 @@ export default function SectionWelcome() {
         </video>
 
         {/* 🎤 Masked Text */}
-        <div className="absolute inset-0 bg-white text-xl md:text-[4vw] leading-none flex flex-col items-center justify-center font-extrabold text-center mix-blend-screen z-40">
+        <div className="absolute inset-0 bg-white text-2xl md:text-[4vw] leading-none flex flex-col items-center justify-center justify-items-end font-extrabold text-center mix-blend-screen z-40">
           <motion.h1
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex gap-2"
+            className="flex gap-2 relative sm:ml-0 ml-3"
           >
             HI! MY NAME IS
-            <motion.span key={displayText} className="text-red-600">
+            <motion.span
+              key={displayText}
+              className="
+    text-red-600 text-sm leading-none absolute top-10.5 -right-0 translate-x-2/3 transform rotate-90 w-[90px]
+    sm:static sm:top-auto sm:right-auto sm:translate-x-0 sm:rotate-0 sm:w-auto sm:text-[4vw] flex items-start
+  "
+            >
               {displayText}
               <span className="animate-blink">|</span>
             </motion.span>
@@ -154,6 +166,7 @@ export default function SectionWelcome() {
             initial={{ opacity: 0, x: -100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="my-1 sm:my-0"
           >
             I&apos;M AI ENGINEER
           </motion.h1>
@@ -163,7 +176,7 @@ export default function SectionWelcome() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="flex flex-row items-center justify-center text-[1.7vw] w-[36vw] gap-3 mt-3">
+            <div className="flex flex-row items-center justify-center text-xs md:text-[1.7vw] min-w-[220px]  md:w-[36vw] gap-3 md:mt-3">
               <h1>Porfolio</h1>
               <div className="grow border-1 md:border-[0.3vh] rounded-full" />
               <h1>2002</h1>

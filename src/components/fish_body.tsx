@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useFishStore } from "@/store/fishStore";
+import BaseImage from "./base_image";
 
 export default function FishBody() {
   const [isFixed, setIsFixed] = useState(false);
@@ -49,18 +50,22 @@ export default function FishBody() {
     >
       
       {/* 🐟 Body (clickable) */}
-      <motion.div
+       <motion.div
+        className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
+        initial={{ opacity: 0, y: -50 }}
         onClick={handleClick}
         animate={useFishStore.getState().isFlying ? flyingAnimation : {}}
-        className="relative z-50 cursor-pointer"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+
       >
-        <Image
-          src="/welcome/fish_body.png"
+        <BaseImage
+          src="/welcome/fish_body2.png"
           alt="Fish Body"
           width={250}
           height={250}
-          className="pointer-events-auto select-none"
+          className="pointer-events-auto select-none w-[190px] min-w-[190px] sm:min-w-[370px] sm:w-[35vw] sm:h-[35vh] object-contain"
           draggable={false}
+          
         />
       </motion.div>
     </div>
