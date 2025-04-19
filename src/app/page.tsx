@@ -7,6 +7,7 @@ import SectionContract from '@/components/section_contract';
 import Navigation from '@/components/navigation';
 import AudioPlayer from '@/components/music_player'
 
+
 export default async function Home() {
   return (
     <main className="bg-white text-black relative">
@@ -19,6 +20,7 @@ export default async function Home() {
       <SectionExperience />
       <SectionProject />
       <SectionContract />
+  
     </main>
   );
 }
