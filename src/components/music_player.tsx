@@ -1,9 +1,12 @@
 "use client";
 
-import Image from "next/image";
+
 import React, { useState, useEffect, useRef } from "react";
 import { Pause, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import BaseImage from "@/components/base_image";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 type Props = {
   src: string;
@@ -51,7 +54,7 @@ const MusicPlayer: React.FC<Props> = ({ src, songTitle, songImage }) => {
             repeat: isOpen || !isPlaying ? 0 : Infinity,
           }}
         >
-          <Image
+          <BaseImage
             src={songImage}
             alt="Song"
             width={36}
@@ -141,7 +144,7 @@ const MusicPlayer: React.FC<Props> = ({ src, songTitle, songImage }) => {
         </motion.div>
       </div>
 
-      <audio src={src} ref={audioRef} autoPlay loop />
+      <audio src={`${basePath}${src}`} ref={audioRef} autoPlay loop />
     </div>
   );
 };

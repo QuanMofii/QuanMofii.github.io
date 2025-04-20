@@ -2,43 +2,16 @@
 
 import BaseImage from "@/components/base_image";
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useFishStore } from "@/store/fishStore";
+import TypingText from "./typing_text";
 
 export default function SectionWelcome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false });
   const { isFlying } = useFishStore();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const words = ["QUAN", "vitdonut"];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    const currentWord = words[currentWordIndex];
-
-    if (!isDeleting && displayText.length < currentWord.length) {
-      timeout = setTimeout(() => {
-        setDisplayText(currentWord.slice(0, displayText.length + 1));
-      }, 150);
-    } else if (isDeleting && displayText.length > 0) {
-      timeout = setTimeout(() => {
-        setDisplayText(currentWord.slice(0, displayText.length - 1));
-      }, 100);
-    } else if (!isDeleting && displayText === currentWord) {
-      timeout = setTimeout(() => setIsDeleting(true), 3000);
-    } else if (isDeleting && displayText === "") {
-      timeout = setTimeout(() => {
-        setIsDeleting(false);
-        setCurrentWordIndex((prev) => (prev + 1) % words.length);
-      }, 400);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [currentWordIndex, displayText, isDeleting, words]);
 
   return (
     <section
@@ -78,8 +51,6 @@ export default function SectionWelcome() {
             />
           </motion.div>
         </motion.div>
-
-        
 
         {/* 🐟 Fish Tail */}
         <motion.div
@@ -130,19 +101,13 @@ export default function SectionWelcome() {
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`flex gap-2 relative sm:ml-0  ${isFlying ? " ml-0" : " ml-3"} text-nowrap`} 
+            className={`flex gap-2 relative sm:ml-0  ${isFlying ? " ml-0" : " ml-3"} text-nowrap`}
           >
-            {isFlying ? "BYE!" : "HI!"} MY NAME IS
-            <motion.span
-              key={displayText}
-              className="
-    text-red-600 text-sm leading-none absolute top-10.5 -right-0 translate-x-2/3 transform rotate-90 w-[90px]
-    sm:static sm:top-auto sm:right-auto sm:translate-x-0 sm:rotate-0 sm:w-auto sm:text-[4vw] flex items-start
-  "
-            >
-              {displayText}
-              <span className="animate-blink">|</span>
-            </motion.span>
+            {isFlying ? "BYE" : "HI!"} MY NAME IS
+            <TypingText
+              words={words}
+              className="text-red-600 text-sm leading-none absolute top-10.5 -right-0 translate-x-2/3 transform rotate-90 w-[90px] sm:static sm:top-auto sm:right-auto sm:translate-x-0 sm:rotate-0 sm:w-auto sm:text-[4vw]"
+            />
           </motion.h1>
 
           <motion.h1
