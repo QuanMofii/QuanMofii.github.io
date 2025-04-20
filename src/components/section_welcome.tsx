@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useFishStore } from "@/store/fishStore";
 import TypingText from "./typing_text";
-
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 export default function SectionWelcome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false });
@@ -92,7 +92,7 @@ export default function SectionWelcome() {
           muted
           playsInline
         >
-          <source src="/welcome/video2.mp4" type="video/mp4" />
+          <source src={`${basePath}/welcome/video2.mp4`} type="video/mp4" />
         </video>
 
         {/* 🎤 Masked Text */}
