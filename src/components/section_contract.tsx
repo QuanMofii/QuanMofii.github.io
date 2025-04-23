@@ -6,7 +6,7 @@ import TypingText from "@/components/typing_text";
 import { Heart, MessageCircle, Share2 } from "lucide-react";
 
 export default function SectionContract() {
-  const socialMedia = ["GITHUB", "LINKEDIN","INSTAGRAM", "FACEBOOK"];
+  const socialMedia = ["GITHUB", "LINKEDIN", "INSTAGRAM", "FACEBOOK"];
   const [isLiked, setIsLiked] = useState(false);
 
   const handleHeartClick = () => {
@@ -28,13 +28,12 @@ export default function SectionContract() {
   return (
     <section
       id="contract"
-      className="h-screen relative w-full flex items-center justify-center"
+      className="h-screen relative w-full max-w-full flex items-center justify-center"
     >
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-white"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-blue-900"></div>
-      <div className="absolute text-xs top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col z-10 bg-white p-3 h-[160px] w-[170px] sm:w-[270px] sm:h-[242px] ">
-        <div className="flex-1 bg-gray-300"></div>
-        <div className="absolute h-[160px] w-[180px] sm:w-[280px] sm:h-[242px] top-0 left-0 translate-x-[-100%]  flex-col flex justify-center items-end  ">
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-white z-10"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-blue-900 z-10"></div>
+      <div className="h-full w-full flex flex-row items-center justify-center z-20">
+        <div className="flex flex-col justify-center items-end text-xs text-left flex-1">
           <motion.div
             initial={{ y: -100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -52,7 +51,69 @@ export default function SectionContract() {
             YOUR DREAM
           </motion.div>
         </div>
-        <div className="absolute h-[160px] w-[180px] sm:w-[280px] sm:h-[242px] top-0 right-0 translate-x-[100%]  flex-col flex justify-center items-start  ">
+
+        <div className="flex flex-shrink-0 items-center justify-center z-10 bg-white h-[160px] w-[170px] sm:w-[270px] sm:h-[242px] relative">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative z-45"
+          >
+            <FishBody />
+          </motion.div>
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-full h-fit border-white border-13 bg-white z-50">
+            <div className="flex py-2">
+              <Heart
+                className={`cursor-pointer mr-3  ${
+                  isLiked ? "fill-red-500 text-red-500" : "text-black"
+                }`}
+                onClick={handleHeartClick}
+              />
+              <MessageCircle
+                className="cursor-pointer mr-2"
+                onClick={handleMessageClick}
+              />
+              <Share2 className="cursor-pointer" onClick={handleShareClick} />
+            </div>
+            <div className="text-xs sm:text-base ">
+              <span className="font-bold md:font-black">vitdonut</span> did u
+              happy today yet?
+            </div>
+            <div className="flex flex-wrap gap-1  sm:text-sm leading-none flex-1 items-end text-xs">
+              <a
+                href="https://github.com/vitdonut/"
+                target="_blank"
+                className="hover:text-cyan-600 transition duration-150"
+              >
+                <span>#github</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ha-minh-quan-b10717294/"
+                target="_blank"
+                className="hover:text-cyan-600 transition duration-150"
+              >
+                <span>#linkedin</span>
+              </a>
+              <a
+                href="https://www.instagram.com/vitdonut._/"
+                target="_blank"
+                className="hover:text-cyan-600 transition duration-150"
+              >
+                <span>#instagram</span>
+              </a>
+              <a
+                href="https://www.facebook.com/vitdonutt"
+                target="_blank"
+                className="hover:text-cyan-600 transition duration-150"
+              >
+                <span>#facebook</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col justify-center items-start text-xs flex-1">
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -72,49 +133,9 @@ export default function SectionContract() {
         </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="relative z-45"
-      >
-        <FishBody />
-
-        <div className="absolute h-[120px] w-[170px] sm:w-[270px] sm:h-[120px] -top-0 left-0 translate-x-[-50%] translate-y-[60%] sm:translate-y-[100%] flex-col flex bg-white px-3 pb-3">
-          <div className="flex py-2">
-            <Heart
-              className={`cursor-pointer mr-3  ${
-                isLiked ? "fill-red-500 text-red-500" : "text-black"
-              }`}
-              onClick={handleHeartClick}
-            />
-            <MessageCircle
-              className="cursor-pointer mr-2"
-              onClick={handleMessageClick}
-            />
-            <Share2 className="cursor-pointer" onClick={handleShareClick} />
-          </div>
-          <div className="text-xs sm:text-base ">
-            <span className="font-bold md:font-black">vitdonut</span > did u happy today yet?
-          </div>
-          <div className="flex flex-wrap gap-1  sm:text-sm leading-none flex-1 items-end text-xs">
-            <a href="https://github.com/vitdonut/" target="_blank" className="hover:text-cyan-600 transition duration-150">
-              <span>#github</span>
-            </a>
-            <a href="https://www.linkedin.com/in/ha-minh-quan-b10717294/" target="_blank" className="hover:text-cyan-600 transition duration-150">     
-            <span>#linkedin</span>
-            </a>
-            <a href="https://www.instagram.com/vitdonut._/" target="_blank" className="hover:text-cyan-600 transition duration-150">  
-            <span>#instagram</span>
-            </a>
-            <a href="https://www.facebook.com/vitdonutt" target="_blank" className="hover:text-cyan-600 transition duration-150"> 
-            <span>#facebook</span>
-            </a>
-          </div>
-        </div>
-      </motion.div>
-      <div className="absolute bottom-0 right-1/2 translate-x-1/2 text-gray-300">@Copy right by vitdonut</div>
+      <div className="absolute bottom-0 right-1/2 translate-x-1/2 text-gray-300 z-50">
+        @Copy right by vitdonut
+      </div>
     </section>
   );
 }

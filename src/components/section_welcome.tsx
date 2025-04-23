@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useFishStore } from "@/store/fishStore";
 import TypingText from "./typing_text";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export default function SectionWelcome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false });
@@ -17,73 +17,70 @@ export default function SectionWelcome() {
     <section
       id="welcome"
       ref={sectionRef}
-      className="h-screen relative w-full flex items-center justify-center bg-white"
+      className="h-screen relative w-full max-w-full overflow-hidden flex items-center justify-center "
     >
-      <div className="relative h-[36vh] w-[60vw] z-20 rounded-md">
-        {/* 🐟 Fish Head */}
+      <div className="absolute shrink-0  h-screen w-[20vw] min-w-[249.6px] flex flex-col justify-center items-center ">
+        {/* fish_head */}
         <motion.div
-          className="absolute -top-8 left-1/2 -translate-x-1/2 sm:-top-[25vh] sm:left-1/2 sm:-translate-x-1/2 z-50"
+          className="flex-1 z-50 flex justify-end flex-col w-full "
           initial={{ opacity: 0, y: -50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            y: isFlying ? [isInView ? 0 : -50, 50, -2000] : isInView ? 0 : -50,
+          }}
+          transition={{
+            duration: isFlying ? 2.5 : 0.8,
+            ease: isFlying ? "linear" : "easeOut",
+            times: isFlying ? [0, 0.8, 1] : undefined,
+          }}
         >
-          <motion.div
-            animate={
-              isFlying
-                ? {
-                    y: [0, 50, -2000],
-                    transition: {
-                      duration: 2.5,
-                      ease: "linear",
-                      times: [0, 0.8, 1],
-                    },
-                  }
-                : {}
-            }
-          >
-            <BaseImage
-              src="/welcome/fish_head.png"
-              alt="Fish Head"
-              width={0}
-              height={0}
-              sizes="15vw"
-              className="w-33 min-h-[143px] min-w-33 h-[143px] sm:min-w-[240px] sm:w-[39vw] sm:h-[39vh] object-contain"
-            />
-          </motion.div>
+          <BaseImage
+            src="/welcome/fish_head.png"
+            alt="Fish Head"
+            width={0}
+            height={0}
+            className="relative w-[70%] shrink-0 z-50 object-contain mb-[7%] mx-auto mt-[32%]"
+          />
         </motion.div>
-
+    
         {/* 🐟 Fish Tail */}
         <motion.div
-          className="absolute -bottom-37 left-1/2 -translate-x-8/15 sm:-bottom-[37.5vh] sm:left-1/2 sm:-translate-x-8/15 z-50"
+          className="flex-1 flex justify-start flex-col z-40 w-full "
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          animate={
+            isFlying
+              ? {
+                  opacity: 1,
+                  y: [0, 50, -2000],
+                }
+              : {
+                  opacity: isInView ? 1 : 0,
+                  y: isInView ? 0 : 50,
+                }
+          }
+          transition={
+            isFlying
+              ? {
+                  duration: 2.5,
+                  ease: "linear",
+                  times: [0, 0.8, 1],
+                }
+              : {
+                  duration: 0.8,
+                  ease: "easeOut",
+                }
+          }
         >
-          <motion.div
-            animate={
-              isFlying
-                ? {
-                    y: [0, 50, -2000],
-                    transition: {
-                      duration: 2.5,
-                      ease: "linear",
-                      times: [0, 0.8, 1],
-                    },
-                  }
-                : {}
-            }
-          >
-            <BaseImage
-              src="/welcome/fish_tail.png"
-              alt="Fish Tail"
-              width={0}
-              height={0}
-              sizes="15vw"
-              className="w-33 min-h-[266px] min-w-33 h-[40vh] sm:min-w-[240px] sm:w-[40vw] sm:h-[40vh] object-contain"
-            />
-          </motion.div>
+          <BaseImage
+            src="/welcome/fish_tail.png"
+            alt="Fish Tail"
+            width={0}
+            height={0}
+            className="relative w-[70%] z-50  object-contain mt-[26%] ml-[10%]"
+          />
         </motion.div>
-
+      </div>
+      <div className="relative h-[36vh] w-[60vw] z-20 rounded-md">
         {/* 🎥 Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover scale-95 z-35"
@@ -96,12 +93,14 @@ export default function SectionWelcome() {
         </video>
 
         {/* 🎤 Masked Text */}
-        <div className="absolute inset-0 bg-white text-2xl md:text-[4vw] leading-none flex flex-col items-center justify-center justify-items-end font-extrabold text-center mix-blend-screen z-40">
+        <div className="absolute inset-0 bg-stone-100 sm:text-2xl md:text-[4vw] leading-none flex flex-col items-center justify-center justify-items-end font-extrabold text-center mix-blend-screen z-40">
           <motion.h1
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`flex gap-2 relative sm:ml-0  ${isFlying ? " ml-0" : " ml-3"} text-nowrap`}
+            className={`flex gap-2 relative sm:ml-0  ${
+              isFlying ? " ml-0" : " ml-3"
+            } text-nowrap`}
           >
             {isFlying ? "BYE" : "HI!"} MY NAME IS
             <TypingText
@@ -124,7 +123,7 @@ export default function SectionWelcome() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="flex flex-row items-center justify-center text-xs md:text-[1.7vw] min-w-[220px]  md:w-[36vw] gap-3 md:mt-3">
+            <div className="flex flex-row items-center justify-center text-xs md:text-[1.7vw] sm:min-w-[220px] min-w-[150px]  md:w-[36vw] gap-3 md:mt-3">
               <h1>Porfolio</h1>
               <div className="grow border-1 md:border-[0.3vh] rounded-full" />
               <h1>2002</h1>
