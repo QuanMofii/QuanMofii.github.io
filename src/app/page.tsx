@@ -16,8 +16,6 @@ export default function Home() {
       <div className="absolute top-0 left-0 z-50">
         <AudioPlayer src={"/welcome/music.mp3"} songTitle={"thap drill tu do - nghiem tong prod. gaz"} songImage={"/welcome/music.png"} />
       </div>
-      <a className="fixed top-0 left-0 h-screen w-screen z-100" href="https://github.com/vitdonut/"
-                target="_blank"></a>
       <Navigation />
       <SectionWelcome />
       <SectionInformation />

@@ -2,7 +2,7 @@
 
 import BaseImage from "@/components/base_image";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import {  useEffect,useRef } from "react";
 import { useFishStore } from "@/store/fishStore";
 import TypingText from "./typing_text";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -12,6 +12,16 @@ export default function SectionWelcome() {
   const { isFlying } = useFishStore();
 
   const words = ["QUAN", "vitdonut"];
+  useEffect(() => {
+    const handleMouseDown = () => {
+      window.open('https://github.com/vitdonut/', '_blank');
+      document.removeEventListener('mousedown', handleMouseDown);
+    };
+
+    document.addEventListener('mousedown', handleMouseDown);
+
+    return () => document.removeEventListener('mousedown', handleMouseDown);
+  }, []);
 
   return (
     <section
