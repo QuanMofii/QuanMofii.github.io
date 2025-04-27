@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
+import  Header  from "@/components/Header";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const Saprona_Regular = localFont({
+  src: "./fonts/Saprona-Regular.woff",
+  display: "swap",
+  variable: "--Saprona_Regular",
 });
 
 export const metadata: Metadata = {
@@ -23,10 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"  suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${Saprona_Regular.className}  ${geistMono.className} antialiased text-black`}
       >
+        <Header/>
         {children}
       </body>
     </html>
