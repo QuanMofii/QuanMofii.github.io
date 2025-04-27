@@ -80,7 +80,7 @@ const WelcomeSection = () => {
       {/* TEXT */}
       <motion.div
         ref={textRef}
-        className="flex items-center justify-center text-center z-20 container mx-auto px-4 py-4 xl:px-15"
+        className="flex items-center justify-center text-center z-20 container mx-auto px-4 py-4 xl:px-7"
       >
         <AnimatedText
           text={"Bonjour! I'm Hà Minh Quân, an AI engineer dedicated to crafting machines that think, speak, and connect like humans."}

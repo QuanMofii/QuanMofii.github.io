@@ -8,7 +8,7 @@ const ContactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col container mx-auto px-4 xl:px-15 pt-15 w-full"
+      className="min-h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15 w-full"
       id="contact"
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1 text-lg">
