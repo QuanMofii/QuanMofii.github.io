@@ -53,7 +53,7 @@ const ProjectSection = () => {
   return (
     <section ref={sectionRef} className="min-h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15" id="project">
       <div className="flex flex-col md:flex-row justify-between mb-16">
-        <AnimatedText text={"My Work"} className="text-5xl md:text-[9vw]" />
+        <AnimatedText text={"My Work"} className="text-6xl md:text-[9vw]" />
         <div className="text-sm md:text-[1.2vw] mt-5 md:mt-0 flex flex-col md:items-end item-start justify-center">
           <AnimatedText text="I build machines that think" />
           <AnimatedText text="Frontend design is my obsession" />

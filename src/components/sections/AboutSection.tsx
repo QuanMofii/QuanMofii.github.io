@@ -11,7 +11,7 @@ const AboutSection = () => {
       id="about"
     >
       <div className="flex items-center justify-center h-full w-full flex-1">
-        <AnimatedText text="Chưa có làm" className="text-lg" />
+        <AnimatedText text="Chưa có làm phần này má" className="text-lg" />
       </div>
     </section>
   );
