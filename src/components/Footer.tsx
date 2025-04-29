@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer
       ref={sectionRef}
-      className="min-h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15 w-full"
+      className="min-h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15 w-full bg-white text-black"
       id="contact"
     >
       <div className="flex flex-col md:flex-row-reverse justify-between mb-16">
