@@ -100,10 +100,10 @@ export const metadata: Metadata = {
     yandex: "",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg" }],
+    icon: "/portfolio/favicon.ico",
+    shortcut: "/portfolio/favicon-16x16.png",
+    apple: "/portfolio/apple-touch-icon.png",
+    other: [{ rel: "mask-icon", url: "/portfolio/safari-pinned-tab.svg" }],
   },
 };
 

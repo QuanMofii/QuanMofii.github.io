@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vitdonut.github.io/portfolio
+
+# Sitemaps
+Sitemap: https://vitdonut.github.io/portfolio/sitemap.xml
