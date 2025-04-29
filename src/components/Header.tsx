@@ -9,7 +9,7 @@ const Header = () => {
   const menuRef = useRef<HTMLDivElement>(null)
 
   const menuItems = useMemo(() => [
-    { name: 'Welcome', href: '#welcome' },
+    { name: 'Hero', href: '#hero' },
     { name: 'About Me', href: '#about' },
     { name: 'Project', href: '#project' },
     { name: 'Contact', href: '#contact' }
@@ -38,7 +38,7 @@ const Header = () => {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Check initial position
+    handleScroll() 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [menuItems])
 
