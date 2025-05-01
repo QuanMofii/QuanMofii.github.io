@@ -10,10 +10,10 @@ const Footer = () => {
   return (
     <footer
       ref={sectionRef}
-      className="min-h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15 w-full bg-white text-black"
+      className="min-h-screen flex flex-col  mx-auto px-4 xl:px-7 pt-15 w-full bg-white border-none mt-[-1px] text-black overflow-hidden"
       id="contact"
     >
-      <div className="flex flex-col md:flex-row-reverse justify-between mb-16">
+      <div className="flex flex-col md:flex-row-reverse justify-between mb-16 ">
         <AnimatedText text={"Contact"} className="text-6xl md:text-[9vw]" />
         <div className="text-sm md:text-[1.2vw] mt-5 md:mt-0 flex flex-col md:items-start item-start justify-end">
           <AnimatedText text="Don't Follow Your Dream" />
@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
         </div>
        
-        <div className="grid grid-cols-1 md:grid-cols-4 md:gap-8 mt-8 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:gap-8 mt-8 mb-4 overflow-hidden">
           <div className="col-span-1 md:col-span-2 text-center">
           <Link
                 href="https://github.com/vitdonut/portfolio"

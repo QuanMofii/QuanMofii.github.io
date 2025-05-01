@@ -1,119 +1,97 @@
 "use client";
-
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-} from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import AnimatedText from "../AnimatedText";
-import BaseVideo from "../BaseVideo";
+import { useEffect, useRef, useState } from "react";
+import AnimatedText from "@/components/AnimatedText";
+import { motion, useScroll, useTransform } from "framer-motion";
+import BaseVideo from "@/components/BaseVideo";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const videoContainerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
-  const { scrollYProgress: videoScrollYProgress } = useScroll({
-    target: videoContainerRef,
-    offset: ["center center", "start start"],
-  });
-  
-  const [isFixed, setIsFixed] = useState(false);
-  const [isSectionEnd, setIsSectionEnd] = useState(false);
-
-  const [videoContainerHeight, setVideoContainerHeight] = useState<number>(0);
-  const isInitialMount = useRef(true);
-
-  useMotionValueEvent(videoScrollYProgress, "change", (latest) => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      return;
-    }
-    
-    if (latest > 0) {
-      setIsFixed(true);
-    } else {
-      setIsFixed(false);
-    }
-  });
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest >= 1) {
-      setIsSectionEnd(true);
-    } else {
-      setIsSectionEnd(false);
-    }
-  });
+  const videoRef = useRef<HTMLDivElement>(null);
+  const [initialScale, setInitialScale] = useState({ x: 1, y: 1 });
 
 
   useEffect(() => {
-    const updateHeight = () => {
+    const updateSize = () => {
       if (textRef.current) {
         const textHeight = textRef.current.offsetHeight;
         const screenHeight = window.innerHeight;
-        setVideoContainerHeight(screenHeight - textHeight);
+        const screenWidth = window.innerWidth;
+
+        const targetWidth = textRef.current.offsetWidth;
+        const targetHeight = screenHeight - textHeight - 70;
+
+        const scaleX = targetWidth / screenWidth;
+        const scaleY = targetHeight / screenHeight;
+        setInitialScale({ x: scaleX, y: scaleY });
+
+
+       
       }
     };
 
-    updateHeight();
-    window.addEventListener("resize", updateHeight); 
-    return () => window.removeEventListener("resize", updateHeight);
+    if (typeof window !== "undefined") {
+      updateSize();
+      window.addEventListener("resize", updateSize);
+      return () => window.removeEventListener("resize", updateSize);
+    }
   }, []);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
 
-  const width = useTransform(scrollYProgress, [0.2, 0.5], ["80%", "100%"]);
-  const height = useTransform(scrollYProgress, [0.2, 0.5], ["80%", "100%"]);
-  const borderRadius = useTransform(scrollYProgress, [0.2, 0.5], ["2rem", "0rem"]);
+  const scaleX = useTransform(scrollYProgress, [0, 0.3], [initialScale.x, 1]);
+  const scaleY = useTransform(scrollYProgress, [0, 0.3], [initialScale.y, 1]);
+  const initialTranslateY = `-${(1 - initialScale.y) * 40}%`;
 
+  const translateY = useTransform(scrollYProgress, [0, 0.05], [ initialTranslateY, "0%"]);
+  console.log(translateY)
+  const borderRadius = useTransform(
+    scrollYProgress,
+    [0, 0.3],
+    ["3rem", "0rem"]
+  );
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col h-[300vh]"
+      className="flex flex-col mx-auto pt-15  lg:pt-0 relative h-[400vh] max-w-screen"
       id="hero"
     >
       {/* TEXT */}
-      <motion.h1
-        ref={textRef}
-        className="flex items-center justify-center text-center z-20 container mx-auto px-4 py-4 xl:px-7"
-      >
-        <AnimatedText
-          text={"Bonjour! I'm Hà Minh Quân, an AI engineer dedicated to crafting machines that think, speak, and connect like humans."}
-          className="text-[4vh] text-left md:w-1/2 w-full mt-10 md:mt-0"
-        />
-      </motion.h1>
-
-      {/* VIDEO */}
-      <div
-        ref={videoContainerRef}
-        className={` relative flex items-center justify-center ${
-            isSectionEnd ? "mt-auto min-h-[100vh]" : ""
-          }`}
-        style={{ height: `${videoContainerHeight}px` }} 
-      >
-        <motion.div
-          style={{
-            width,
-            height,
-            borderRadius,
-          }}
-          className={`
-            ${
-              isFixed && !isSectionEnd
-                ? "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full"
-                : "relative w-full min-h-full"
+      <div className=" z-20 mx-auto container px-4 mt-0 lg:mt-4">
+        <div
+          className="flex items-center justify-center text-center w-full"
+          ref={textRef}
+        >
+          <AnimatedText
+            text={
+              "Bonjour! I'm Hà Minh Quân, an AI engineer dedicated to crafting machines that think, speak, and connect like humans."
             }
-            bg-black overflow-hidden z-10 mb-5
-          `}
+            className="text-[4vh] text-left lg:w-1/2 w-full"
+          />
+        </div>
+      </div>
+      {/* VIDEO */}
+      <div ref={videoRef} className="w-full h-screen sticky top-0  m-0 overflow-hidden mx-auto">
+        <motion.div
+          className="h-full w-full"
+          style={{
+            scaleX,
+            scaleY,
+            translateY,
+            borderRadius,
+            overflow: "hidden",
+
+            
+          }}
         >
           <BaseVideo
             src="/welcome/video.mp4"
-            className="w-full h-full object-cover "
+            className="w-full h-full  object-cover"
+            style={{
+              scale: `${scaleX} ${scaleY} `,
+            }}
           />
         </motion.div>
       </div>

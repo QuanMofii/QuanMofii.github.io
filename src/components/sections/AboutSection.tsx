@@ -7,7 +7,7 @@ const AboutSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15 w-full"
+      className="min-h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15 w-full "
       id="about"
     >
       <div className="flex items-center justify-center h-full w-full flex-1">

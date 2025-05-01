@@ -1,3 +1,58 @@
+// 'use client'
+
+// import { motion } from 'framer-motion'
+// import { useEffect, useState, useRef } from 'react'
+
+// interface AnimatedTextProps {
+//   text: string
+//   className?: string
+// }
+
+// const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
+//   const [isVisible, setIsVisible] = useState(false)
+//   const words = text.match(/\S+\s*/g) || []  
+//   const textRef = useRef<HTMLDivElement>(null)
+
+//   useEffect(() => {
+//     const element = textRef.current
+//     const observer = new IntersectionObserver(
+//       ([entry]) => setIsVisible(entry.isIntersecting),
+//       { threshold: 0.1 }
+//     )
+//     if (element) observer.observe(element)
+//     return () => {
+//       if (element) observer.unobserve(element)
+//     }
+//   }, [])
+
+//   return (
+//     <div
+//       ref={textRef}
+//       className={`text-wrap ${className}`}
+   
+//     >
+//       {words.map((word, index) => (
+//         <motion.span
+//           key={index}
+//           initial={{ y: 20, opacity: 0 }}
+//           animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+//           transition={{
+//             delay: index * 0.1,
+//             duration: 0.2,
+//             type: "spring",
+//             stiffness: 400,
+//             damping: 15
+//           }}
+         
+//         >
+//           {word}
+//         </motion.span>
+//       ))}
+//     </div>
+//   )
+// }
+
+// export default AnimatedText
 'use client'
 
 import { motion } from 'framer-motion'
@@ -10,7 +65,7 @@ interface AnimatedTextProps {
 
 const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
   const [isVisible, setIsVisible] = useState(false)
-  const words = text.split(" ")
+  const words = text.match(/\S+\s*/g) || []  
   const textRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -51,9 +106,10 @@ const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
             stiffness: 400,
             damping: 15
           }}
-          className="mr-2"
+          className="mr-2 "
         >
           {word}
+        
         </motion.div>
       ))}
     </div>

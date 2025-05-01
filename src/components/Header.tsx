@@ -56,7 +56,7 @@ const Header = () => {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent font-extrabol text-black">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent font-extrabol  text-black">
       <div className="container mx-auto px-4 py-4 xl:px-7 flex justify-between items-center">
         {/* Logo */}
         <motion.div

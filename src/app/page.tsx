@@ -6,7 +6,7 @@ import ProjectSection from "@/components/sections/ProjectSection";
 
 export default function Home() {
   return (
-    <main className="relative bg-white overflow-hidden text-black">
+    <main className="relative bg-white  text-black">
       <WelcomeSection />
       <AboutSection />
       <ProjectSection />

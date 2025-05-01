@@ -19,8 +19,8 @@ const Saprona_Regular = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://vitdonut.github.io/portfolio"),
   title: {
-    default: "Hà Minh Quân | vitdonut | AI Engineer Portfolio",
-    template: "%s | Hà Minh Quân - vitdonut",
+    default: "Vitdonut",
+    template: "%s | Vitdonut",
   },
   description:
     "I'm Hà Minh Quân (vitdonut), an AI Engineer specialized in Chatbots, LLMs, AI Agents, and NLP applications. Building intelligent machines that think, speak, and connect like humans.",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://vitdonut.github.io/portfolio",
     siteName: "Hà Minh Quân | AI Engineer Portfolio",
-    title: "Hà Minh Quân | AI Engineer | Chatbot, LLM & AI Agent Specialist",
+    title: "Hà Minh Quân | AI Engineer",
     description:
       "Explore the portfolio of Hà Minh Quân (vitdonut), an AI Engineer focusing on Chatbots, LLMs, NLP, and AI Agents development. Let's build the future of intelligent interaction.",
     images: [
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hà Minh Quân | AI Engineer | Chatbot, LLM & AI Agent Specialist",
+    title: "Hà Minh Quân | AI Engineer",
     description:
       "Portfolio of Hà Minh Quân (vitdonut), AI Engineer specializing in Chatbots, LLMs, NLP, and AI-driven solutions.",
     creator: "@vitdonut_ai",
@@ -142,7 +142,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${Saprona_Regular.className}  ${geistMono.className} antialiased text-black`}
+        className={`${Saprona_Regular.className}  ${geistMono.className} antialiased text-black `}
       >
         <Header />
         {children}
