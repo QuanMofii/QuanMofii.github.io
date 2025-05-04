@@ -7,7 +7,6 @@ import BaseVideo from "@/components/BaseVideo";
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLDivElement>(null);
   const [initialScale, setInitialScale] = useState({ x: 1, y: 1 });
 
 
@@ -46,7 +45,6 @@ const HeroSection = () => {
   const initialTranslateY = `-${(1 - initialScale.y) * 40}%`;
 
   const translateY = useTransform(scrollYProgress, [0, 0.05], [ initialTranslateY, "0%"]);
-  console.log(translateY)
   const borderRadius = useTransform(
     scrollYProgress,
     [0, 0.3],
@@ -55,7 +53,7 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col mx-auto pt-15  lg:pt-0 relative h-[400vh] max-w-screen"
+      className="flex flex-col mx-auto pt-15  lg:pt-0 relative h-[300vh] max-w-screen"
       id="hero"
     >
       {/* TEXT */}
@@ -66,14 +64,14 @@ const HeroSection = () => {
         >
           <AnimatedText
             text={
-              "Bonjour! I'm Hà Minh Quân, an AI engineer dedicated to crafting machines that think, speak, and connect like humans."
+              "Quack quack! LilDucks here — or Ha Minh Quan, if you're feeling formal. An AI engineer coding brains for machines to think, chat, sometimes drop bad puns. "
             }
             className="text-[4vh] text-left lg:w-1/2 w-full"
           />
         </div>
       </div>
       {/* VIDEO */}
-      <div ref={videoRef} className="w-full h-screen sticky top-0  m-0 overflow-hidden mx-auto">
+      <div  className="w-full h-screen sticky top-0  m-0 overflow-hidden mx-auto">
         <motion.div
           className="h-full w-full"
           style={{
@@ -81,9 +79,7 @@ const HeroSection = () => {
             scaleY,
             translateY,
             borderRadius,
-            overflow: "hidden",
-
-            
+            overflow: "hidden", 
           }}
         >
           <BaseVideo

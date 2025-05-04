@@ -64,7 +64,7 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-3xl font-bold"
         >
-          <h1>Vitdonut</h1>
+          <h1>LilDucks</h1>
         </motion.div>
 
         {/* Menu Button */}

@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
 
           <div className="col-span-1 flex flex-col items-start justify-start md:justify-center ">
-            <AnimatedText text="Tân Bình, HCM" />
+            <AnimatedText text="Tan Binh, HCM" />
             <AnimatedText text="0376316144" />
 
             <div className="md:hidden mt-5">
@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="col-span-1 flex flex-col justify-start md:justify-evenly">
             <div className="flex flex-col w-fit">
             <Link 
-                href="https://github.com/vitdonut"
+                href="https://github.com/LilDucks"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -70,7 +70,7 @@ const Footer = () => {
                 <AnimatedText text="@Facebook" />
               </Link>
               <Link
-                href="https://www.instagram.com/vitdonut._/"
+                href="https://www.instagram.com/lilducks__/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -91,12 +91,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 md:gap-8 mt-8 mb-4 overflow-hidden">
           <div className="col-span-1 md:col-span-2 text-center">
           <Link
-                href="https://github.com/vitdonut/portfolio"
+                href="https://lilducks.github.io/portfolio/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
             <AnimatedText
-              text="#github.com/vitdonut/portfolio"
+              text="#github.com/lilducks/portfolio"
               className="text-lg"
             />
             </Link>
@@ -105,7 +105,7 @@ const Footer = () => {
             <AnimatedText text="Built by Quan❤️" className="text-lg" />
           </div>
           <div className="col-span-1 text-center">
-            <AnimatedText text="©Copyright by vitdonut" className="text-lg" />
+            <AnimatedText text="©Copyright by LilDucks" className="text-lg" />
           </div>
         </div>
       </div>

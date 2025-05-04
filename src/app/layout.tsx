@@ -17,16 +17,17 @@ const Saprona_Regular = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vitdonut.github.io/portfolio"),
+  metadataBase: new URL("https://lilducks.github.io/portfolio"),
   title: {
-    default: "Vitdonut",
-    template: "%s | Vitdonut",
+    default: "LilDucks | Ha Minh Quan ",
+    template: "%s | LilDucks",
   },
   description:
-    "I'm Hà Minh Quân (vitdonut), an AI Engineer specialized in Chatbots, LLMs, AI Agents, and NLP applications. Building intelligent machines that think, speak, and connect like humans.",
+    "Portfolio of Ha Minh Quan (a.k.a LilDucks), AI/NLP engineer specializing in LLMs and conversational AI, with projects in chatbot and language tech.",
   keywords: [
     "Hà Minh Quân",
-    "vitdonut",
+    "Ha Minh Quan",
+    "lilducks",
     "AI Engineer",
     "Chatbot Developer",
     "LLM Specialist",
@@ -37,18 +38,18 @@ export const metadata: Metadata = {
     "Deploy AI",
     "Large Language Models",
     "Conversational AI",
-    "Portfolio Hà Minh Quân",
-    "vitdonut Portfolio",
+    "Portfolio Ha Minh Quan",
+    "LilDucks Portfolio",
     "Vietnam AI Engineer",
   ],
   authors: [
     {
-      name: "Hà Minh Quân",
-      url: "https://vitdonut.github.io/portfolio",
+      name: "LilDucks",
+      url: "https://lilducks.github.io/portfolio",
     },
   ],
-  creator: "Hà Minh Quân (vitdonut)",
-  publisher: "Hà Minh Quân",
+  creator: "LilDucks",
+  publisher: "LilDucks",
   alternates: {
     canonical: "/",
     languages: {
@@ -59,14 +60,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vitdonut.github.io/portfolio",
-    siteName: "Hà Minh Quân | AI Engineer Portfolio",
-    title: "Hà Minh Quân | AI Engineer",
+    url: "https://lilducks.github.io/portfolio",
+    siteName: "LilDucks | Ha Minh Quan  Portfolio",
+    title: "LilDucks | Ha Minh Quan  Portfolio",
     description:
-      "Explore the portfolio of Hà Minh Quân (vitdonut), an AI Engineer focusing on Chatbots, LLMs, NLP, and AI Agents development. Let's build the future of intelligent interaction.",
+      "Portfolio of Ha Minh Quan (a.k.a LilDucks), AI engineer in NLP, LLMs, and chatbots.",
     images: [
       {
-        url: "https://vitdonut.github.io/portfolio/avatar.jpg",
+        url: "https://lilducks.github.io/portfolio/avatar.jpg",
         width: 1200,
         height: 630,
         alt: "Hà Minh Quân - AI Engineer Portfolio",
@@ -77,9 +78,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hà Minh Quân | AI Engineer",
     description:
-      "Portfolio of Hà Minh Quân (vitdonut), AI Engineer specializing in Chatbots, LLMs, NLP, and AI-driven solutions.",
-    creator: "@vitdonut_ai",
-    images: ["https://vitdonut.github.io/portfolio/avatar.jpg"],
+      "Portfolio of Ha Minh Quan (a.k.a LilDucks), AI engineer in NLP, LLMs, and chatbots.",
+    creator: "@lilducks",
+    images: ["https://lilducks.github.io/portfolio/avatar.jpg"],
   },
   robots: {
     index: true,
@@ -121,22 +122,22 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Hà Minh Quân",
-              alternateName: "vitdonut",
-              url: "https://vitdonut.github.io/portfolio",
-              image: "https://vitdonut.github.io/portfolio/avatar.jpg",
+              name: "Ha Minh Quan",
+              alternateName: "lilducks",
+              url: "https://lilducks.github.io/portfolio",
+              image: "https://lilducks.github.io/portfolio/avatar.jpg",
               jobTitle: "AI Engineer | Chatbot Developer | LLM Specialist",
               worksFor: {
                 "@type": "Organization",
-                name: "vitdonut",
+                name: "lilducks",
               },
               sameAs: [
-                "https://github.com/vitdonut",
-                "https://linkedin.com/in/vitdonut",
-                "https://twitter.com/vitdonut_ai",
+                "https://github.com/lilducks",
+                "https://www.linkedin.com/in/ha-minh-quan-b10717294/",
+                "https://x.com/lilducks",
               ],
               description:
-                "Hà Minh Quân (vitdonut) is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
+                "Hà Minh Quân (lilducks) is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
             }),
           }}
         />

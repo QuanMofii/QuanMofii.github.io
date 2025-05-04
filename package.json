@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": " https://vitdonut.github.io/portfolio/",
+  "homepage": "https://lilducks.github.io/portfolio/",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
