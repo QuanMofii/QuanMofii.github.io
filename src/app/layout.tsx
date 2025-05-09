@@ -10,8 +10,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const Saprona_Regular = localFont({
-  src: "./fonts/Saprona-Regular.woff",
+const MarlinGeoSQ_Medium = localFont({
+  src: "./fonts/MarlinGeoSQ-Regular.woff",
   display: "swap",
   variable: "--Saprona_Regular",
 });
@@ -143,7 +143,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${Saprona_Regular.className}  ${geistMono.className} antialiased text-black `}
+        className={`${MarlinGeoSQ_Medium.className}  ${geistMono.className} antialiased text-black `}
       >
         <Header />
         {children}

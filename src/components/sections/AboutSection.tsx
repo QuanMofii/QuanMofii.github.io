@@ -1,18 +1,37 @@
-import { useRef } from "react";
-import AnimatedText from "@/components/AnimatedText";
+"use client";
 
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from 'framer-motion'
+import BaseVideo from "@/components/BaseVideo";
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'center center'] // scroll từ khi bắt đầu đến giữa màn hình
+  })
+
+  // Di chuyển ảnh theo trục y và x
+  const y = useTransform(scrollYProgress, [0, 1], ['-100px', '0px'])
+  const x = useTransform(scrollYProgress, [0, 1], ['0px', '0px']) // nếu cần trục x thì tùy chỉnh thêm
 
   return (
     <section
+      id="introduce"
       ref={sectionRef}
-      className="min-h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15 w-full "
-      id="about"
+      className="h-screen flex flex-col container mx-auto px-4 xl:px-7 pt-15 w-full sticky  top-0  "
     >
-     <div className="flex flex-col  justify-between mb-30">
-        <AnimatedText text={"My Work"} className="text-6xl md:text-[9vw]" />
-        <AnimatedText text={"My Work"} className="text-6xl md:text-[9vw]" />
+       <div className="flex items-center justify-center w-full h-full">
+        <motion.div
+          style={{ y, x }}
+          className="w-3/5 h-1/2"
+        >
+          <BaseVideo
+            src="/hero/video.mp4"
+            className="w-full h-full object-cover"
+        
+         
+          />
+        </motion.div>
       </div>
     </section>
   );

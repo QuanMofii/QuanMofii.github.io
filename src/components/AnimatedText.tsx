@@ -1,58 +1,3 @@
-// 'use client'
-
-// import { motion } from 'framer-motion'
-// import { useEffect, useState, useRef } from 'react'
-
-// interface AnimatedTextProps {
-//   text: string
-//   className?: string
-// }
-
-// const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
-//   const [isVisible, setIsVisible] = useState(false)
-//   const words = text.match(/\S+\s*/g) || []  
-//   const textRef = useRef<HTMLDivElement>(null)
-
-//   useEffect(() => {
-//     const element = textRef.current
-//     const observer = new IntersectionObserver(
-//       ([entry]) => setIsVisible(entry.isIntersecting),
-//       { threshold: 0.1 }
-//     )
-//     if (element) observer.observe(element)
-//     return () => {
-//       if (element) observer.unobserve(element)
-//     }
-//   }, [])
-
-//   return (
-//     <div
-//       ref={textRef}
-//       className={`text-wrap ${className}`}
-   
-//     >
-//       {words.map((word, index) => (
-//         <motion.span
-//           key={index}
-//           initial={{ y: 20, opacity: 0 }}
-//           animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
-//           transition={{
-//             delay: index * 0.1,
-//             duration: 0.2,
-//             type: "spring",
-//             stiffness: 400,
-//             damping: 15
-//           }}
-         
-//         >
-//           {word}
-//         </motion.span>
-//       ))}
-//     </div>
-//   )
-// }
-
-// export default AnimatedText
 'use client'
 
 import { motion } from 'framer-motion'
@@ -61,9 +6,18 @@ import { useEffect, useState, useRef } from 'react'
 interface AnimatedTextProps {
   text: string
   className?: string
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div'
+  withRotate?: boolean
+  style?: React.CSSProperties;
 }
 
-const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
+const AnimatedText = ({ 
+  text, 
+  className = "", 
+  as = 'div',
+  withRotate = true ,
+  style 
+}: AnimatedTextProps) => {
   const [isVisible, setIsVisible] = useState(false)
   const words = text.match(/\S+\s*/g) || []  
   const textRef = useRef<HTMLDivElement>(null)
@@ -92,27 +46,40 @@ const AnimatedText = ({ text, className = "" }: AnimatedTextProps) => {
     }
   }, [])
 
+  const Component = as
+
   return (
-    <div ref={textRef} className={`flex flex-wrap justify-start ${className}`}>
+    <Component ref={textRef} className={`flex flex-wrap justify-start ${className}`} style={style}>
       {words.map((word, index) => (
         <motion.div
           key={index}
-          initial={{ y: 20, opacity: 0 }}
-          animate={isVisible ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+          initial={{ 
+            y: 20, 
+            opacity: 0,
+            ...(withRotate && { rotate: 5 })
+          }}
+          animate={isVisible ? { 
+            y: 0, 
+            opacity: 1,
+            ...(withRotate && { rotate: 0 })
+          } : { 
+            y: 20, 
+            opacity: 0,
+            ...(withRotate && { rotate: 5 })
+          }}
           transition={{ 
             delay: index * 0.1,
             duration: 0.2,
             type: "spring",
-            stiffness: 400,
-            damping: 15
+            stiffness: 50,
+            damping: 10
           }}
-          className="mr-2 "
+          className="mr-2"
         >
           {word}
-        
         </motion.div>
       ))}
-    </div>
+    </Component>
   )
 }
 

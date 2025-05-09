@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import AnimatedText from "@/components/AnimatedText";
 import { motion, useScroll, useTransform } from "framer-motion";
 import BaseVideo from "@/components/BaseVideo";
+import AnimatedDiv from "@/components/AnimatedDiv";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -18,7 +19,7 @@ const HeroSection = () => {
         const screenWidth = window.innerWidth;
 
         const targetWidth = textRef.current.offsetWidth;
-        const targetHeight = screenHeight - textHeight - 70;
+        const targetHeight = screenHeight - textHeight - 90;
 
         const scaleX = targetWidth / screenWidth;
         const scaleY = targetHeight / screenHeight;
@@ -48,30 +49,30 @@ const HeroSection = () => {
   const borderRadius = useTransform(
     scrollYProgress,
     [0, 0.3],
-    ["3rem", "0rem"]
+    ["2rem", "0rem"]
   );
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col mx-auto pt-15  lg:pt-0 relative h-[300vh] max-w-screen"
+      className="flex flex-col mx-auto pt-19  lg:pt-0  h-[300vh] max-w-screen z-10 bg-white"
       id="hero"
     >
       {/* TEXT */}
-      <div className=" z-20 mx-auto container px-4 mt-0 lg:mt-4">
+      <div className="  mx-auto container px-4 mt-0 lg:mt-7 bg-white">
         <div
           className="flex items-center justify-center text-center w-full"
           ref={textRef}
         >
           <AnimatedText
             text={
-              "Quack quack! LilDucks here — or Ha Minh Quan, if you're feeling formal. An AI engineer coding brains for machines to think, chat, sometimes drop bad puns. "
+              "I'm JellyMofii A.K.A Ha Minh Quan, an AI engineer driven by a fascination with how machines understand, reason, and communicate. I create systems that think, talk, and sometimes surprise you with how human they can feel."
             }
-            className="text-[4vh] text-left lg:w-1/2 w-full"
+            className="lg:text-2xl/9.5 text-[3.3vh] xl:text-3xl/11  text-left lg:w-3/5 w-full"
           />
         </div>
       </div>
       {/* VIDEO */}
-      <div  className="w-full h-screen sticky top-0  m-0 overflow-hidden mx-auto">
+      <AnimatedDiv withRotate={false} className=" w-full  h-screen sticky top-0 m-0 overflow-hidden mx-auto">
         <motion.div
           className="h-full w-full"
           style={{
@@ -83,14 +84,14 @@ const HeroSection = () => {
           }}
         >
           <BaseVideo
-            src="/welcome/video.mp4"
-            className="w-full h-full  object-cover"
+            src="/hero/video.mp4"
+            className="w-full h-full object-cover"
             style={{
               scale: `${scaleX} ${scaleY} `,
             }}
           />
         </motion.div>
-      </div>
+      </AnimatedDiv>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useRef } from "react";
 import AnimatedText from "@/components/AnimatedText";
 import BaseImage from "@/components/BaseImage";
@@ -7,24 +7,23 @@ import Link from "next/link";
 const Footer = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  return (
+  return (<><div id="contact-scroll-anchor" className="h-screen" />
     <footer
       ref={sectionRef}
-      className="min-h-screen flex flex-col  mx-auto px-4 xl:px-7 pt-15 w-full bg-white border-none mt-[-1px] text-black overflow-hidden"
+      className="fixed top-0 right-0 min-h-screen flex flex-col w-full  bg-white border-none mt-[-1px] text-black overflow-hidden z-10 max-h-screen h-screen"
       id="contact"
     >
-      <div className="flex flex-col md:flex-row-reverse justify-between mb-16 ">
+      {/* <div className="flex flex-col md:flex-row-reverse justify-between  w-full  bg-white z-50 mt-12">
         <AnimatedText text={"Contact"} className="text-6xl md:text-[9vw]" />
         <div className="text-sm md:text-[1.2vw] mt-5 md:mt-0 flex flex-col md:items-start item-start justify-end">
           <AnimatedText text="Don't Follow Your Dream" />
           <AnimatedText text="Follow My Social Media " />
-    
         </div>
-      </div>
-      <div className="min-h-screen h-screen flex-1 flex flex-col">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1 text-lg">
-          <div className="col-span-2 md:order-last order-first flex items-center justify-center flex-col">
-            <div className="relative w-1/3 md:w-1/2 aspect-square">
+      </div> */}
+      <div className="mx-auto px-4 xl:px-7 flex-1 flex flex-col h-screen container bg-white text-black z-10 ">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1 text-lg mt-20 md:text-xl  md:max-h-1/2 md:mt-auto">
+          <div className="col-span-2 md:col-span-2 md:order-last order-first flex items-center md:justify-start justify-center flex-col">
+            <div className="relative w-1/3 aspect-square">
               <BaseImage
                 src="/contract/avatar.jpg"
                 alt="Avatar"
@@ -33,9 +32,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-span-1 flex flex-col items-start justify-start md:justify-center ">
-            <AnimatedText text="Tan Binh, HCM" />
-            <AnimatedText text="0376316144" />
+          <div className="col-span-1 flex flex-col items-start justify-start">
+            <div className="">
+              <AnimatedText text="Tan Binh, HCM" />
+              <AnimatedText text="Call 0376316144" />
+            </div>
 
             <div className="md:hidden mt-5">
               <AnimatedText text="Email For Work" />
@@ -46,9 +47,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-span-1 flex flex-col justify-start md:justify-evenly">
-            <div className="flex flex-col w-fit">
-            <Link 
+          <div className="col-span-1 grid  md:grid-rows-[1fr_1fr_1fr] ">
+            <div className="flex flex-col w-fit h-fit">
+              <Link
                 href="https://github.com/LilDucks"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,40 +78,44 @@ const Footer = () => {
                 <AnimatedText text="@Instagram" />
               </Link>
             </div>
-            <div className="hidden md:block text-center">
+
+            <div className="hidden md:block self-center">
               <AnimatedText text="Email For Work" />
               <AnimatedText text="haminhquan12c7@gmail.com" />
             </div>
-            <div className="hidden md:block text-center">
+
+
+            <div className="hidden md:block ">
               <AnimatedText text="Zalo message" />
               <AnimatedText text="0376316144" />
             </div>
           </div>
         </div>
-       
-        <div className="grid grid-cols-1 md:grid-cols-4 md:gap-8 mt-8 mb-4 overflow-hidden">
-          <div className="col-span-1 md:col-span-2 text-center">
-          <Link
-                href="https://lilducks.github.io/portfolio/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-            <AnimatedText
-              text="#github.com/lilducks/portfolio"
-              className="text-lg"
-            />
+
+        <div className="grid grid-cols-1 md:grid-cols-4 md:gap-8 mt-8 mb-4 overflow-hidden w-full ">
+          <div className="col-span-1 md:col-span-2 text-center ">
+            <Link
+              href="https://lilducks.github.io/portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AnimatedText
+                text="#github.com/lilducks/portfolio"
+                className="text-lg break-words truncate"
+              />
             </Link>
           </div>
-          <div className="col-span-1 text-center">
+          <div className="col-span-1 ">
             <AnimatedText text="Built by Quan❤️" className="text-lg" />
           </div>
-          <div className="col-span-1 text-center">
-            <AnimatedText text="©Copyright by LilDucks" className="text-lg" />
+          <div className="col-span-1 flex md:justify-end">
+            <AnimatedText text="©Copyright by LilDucks" className="text-lg " />
           </div>
         </div>
       </div>
     </footer>
+    </>
   );
 };
 
-export default Footer ;
+export default Footer;
