@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JellyMofii | Ha Minh Quan — AI Engineer Portfolio
 
-## Getting Started
+Welcome to the personal portfolio of **JellyMofii** (Ha Minh Quan), an AI Engineer specializing in **natural language processing (NLP)**, **large language models (LLMs)**, **AI agents**, and end-to-end **chatbot systems**. This site is built using **Next.js App Router** and showcases both technical capabilities and design aesthetics.
 
-First, run the development server:
+## 👋 About Me
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> "I'm JellyMofii, also known as Ha Minh Quan, an AI engineer crafting machines that read, think, answer and surprise you like a human would."
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I'm an AI engineer driven by a passion for **language**, **cognition**, and the potential of **intelligent systems**.  
+With a strong foundation in:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🔍 **Natural Language Processing (NLP)**
+- 🧠 **Large Language Models (LLMs)**
+- 🤖 **Autonomous Agents**
+- 💬 **Conversational AI and Chatbot Development**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+My mission is to create **accessible**, **high-impact AI language solutions** that feel intuitive, human, and meaningful.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Live Site
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**🔗 [https://jellymofii.github.io](https://jellymofii.github.io)**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Built With
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js 14+ (App Router)](https://nextjs.org)
+- TypeScript
+- Tailwind CSS
+- Custom Fonts (Geist Mono, MarlinGeoSQ)
+- Structured metadata for SEO (robots, sitemap, open graph, Twitter card, JSON-LD)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
