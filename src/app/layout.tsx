@@ -25,7 +25,7 @@ const MarlinGeoSQ_Medium = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jellymofii.github.io/"),
   title: {
-    default: "JellyMofii | Ha Minh Quan ",
+    default: "JellyMofii",
     template: "%s | JellyMofii",
   },
   description:

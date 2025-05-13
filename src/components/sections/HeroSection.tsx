@@ -68,6 +68,7 @@ const HeroSection = () => {
               "I'm JellyMofii, also known as Ha Minh Quan, an AI engineer crafting machines that read, think, answer and surprises you like a human would."
             }
             className="lg:text-2xl/9.5 text-[3.3vh] xl:text-3xl/11  text-left lg:w-3/5 w-full"
+            as="h1"
           />
         </div>
       </div>
