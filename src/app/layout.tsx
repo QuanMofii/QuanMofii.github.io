@@ -23,17 +23,17 @@ const MarlinGeoSQ_Medium = localFont({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lilducks.github.io/portfolio"),
+  metadataBase: new URL("https://jellymofii.github.io/"),
   title: {
-    default: "LilDucks | Ha Minh Quan ",
-    template: "%s | LilDucks",
+    default: "JellyMofii | Ha Minh Quan ",
+    template: "%s | JellyMofii",
   },
   description:
-    "Portfolio of Ha Minh Quan (a.k.a LilDucks), AI/NLP engineer specializing in LLMs and conversational AI, with projects in chatbot and language tech.",
+    "Portfolio of JellyMofii also known as Ha Minh Quan, AI engineer in NLP, LLMs, and chatbots with projects in chatbot and language tech.",
   keywords: [
     "Hà Minh Quân",
     "Ha Minh Quan",
-    "lilducks",
+    "JellyMofii",
     "AI Engineer",
     "Chatbot Developer",
     "LLM Specialist",
@@ -45,17 +45,17 @@ export const metadata: Metadata = {
     "Large Language Models",
     "Conversational AI",
     "Portfolio Ha Minh Quan",
-    "LilDucks Portfolio",
+    "JellyMofii Portfolio",
     "Vietnam AI Engineer",
   ],
   authors: [
     {
-      name: "LilDucks",
-      url: "https://lilducks.github.io/portfolio",
+      name: "JellyMofii",
+      url: "https://jellymofii.github.io/",
     },
   ],
-  creator: "LilDucks",
-  publisher: "LilDucks",
+  creator: "JellyMofii",
+  publisher: "JellyMofii",
   alternates: {
     canonical: "/",
     languages: {
@@ -66,27 +66,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://lilducks.github.io/portfolio",
-    siteName: "LilDucks | Ha Minh Quan  Portfolio",
-    title: "LilDucks | Ha Minh Quan  Portfolio",
+    url: "https://jellymofii.github.io/",
+    siteName: "JellyMofii | Ha Minh Quan Portfolio",
+    title: "JellyMofii | Ha Minh Quan Portfolio",
     description:
-      "Portfolio of Ha Minh Quan (a.k.a LilDucks), AI engineer in NLP, LLMs, and chatbots.",
+      "Portfolio of JellyMofii also known as Ha Minh Quan, AI engineer in NLP, LLMs, and chatbots.",
     images: [
       {
-        url: "https://lilducks.github.io/portfolio/avatar.jpg",
+        url: "https://jellymofii.github.io/avatar.jpg",
         width: 1200,
         height: 630,
-        alt: "Hà Minh Quân - AI Engineer Portfolio",
+        alt: "JellyMoffi also known as Ha Minh Quan - AI Engineer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hà Minh Quân | AI Engineer",
+    title: "JellyMofii | Ha Minh Quan Portfolio",
     description:
-      "Portfolio of Ha Minh Quan (a.k.a LilDucks), AI engineer in NLP, LLMs, and chatbots.",
-    creator: "@lilducks",
-    images: ["https://lilducks.github.io/portfolio/avatar.jpg"],
+      "Portfolio of JellyMofii also known as Ha Minh Quan, AI engineer in NLP, LLMs, and chatbots.",
+    creator: "@JellyMofii",
+    images: ["https://jellymofii.github.io/avatar.jpg"],
   },
   robots: {
     index: true,
@@ -107,10 +107,10 @@ export const metadata: Metadata = {
     yandex: "",
   },
   icons: {
-    icon: "/portfolio/favicon.ico",
-    shortcut: "/portfolio/favicon-16x16.png",
-    apple: "/portfolio/apple-touch-icon.png",
-    other: [{ rel: "mask-icon", url: "/portfolio/safari-pinned-tab.svg" }],
+    icon: "favicon.ico",
+    shortcut: "favicon-16x16.png",
+    apple: "apple-touch-icon.png",
+    other: [{ rel: "mask-icon", url: "safari-pinned-tab.svg" }],
   },
 };
 
