@@ -1,6 +1,6 @@
 // next-sitemap.config.js
 module.exports = {
-    siteUrl: 'https://lilducks.github.io/portfolio/',              
+    siteUrl: 'https://jellymofii.github.io/',              
     generateRobotsTxt: true,
     outDir: './out',
     changefreq: 'weekly',
