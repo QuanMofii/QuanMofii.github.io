@@ -7,12 +7,12 @@ const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ['start end', 'center center'] // scroll từ khi bắt đầu đến giữa màn hình
+    offset: ['start end', 'center center'] 
   })
 
-  // Di chuyển ảnh theo trục y và x
+
   const y = useTransform(scrollYProgress, [0, 1], ['-100px', '0px'])
-  const x = useTransform(scrollYProgress, [0, 1], ['0px', '0px']) // nếu cần trục x thì tùy chỉnh thêm
+  const x = useTransform(scrollYProgress, [0, 1], ['0px', '0px']) 
 
   return (
     <section

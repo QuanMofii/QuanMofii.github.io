@@ -65,7 +65,7 @@ const HeroSection = () => {
         >
           <AnimatedText
             text={
-              "I'm JellyMofii A.K.A Ha Minh Quan, an AI engineer driven by a fascination with how machines understand, reason, and communicate. I create systems that think, talk, and sometimes surprise you with how human they can feel."
+              "I'm JellyMofii, also known as Ha Minh Quan, an AI engineer crafting machines that read, think, answer and surprises you like a human would."
             }
             className="lg:text-2xl/9.5 text-[3.3vh] xl:text-3xl/11  text-left lg:w-3/5 w-full"
           />

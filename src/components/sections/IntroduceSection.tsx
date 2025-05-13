@@ -74,7 +74,7 @@ const IntroduceSection = () => {
           life—making it more human, more intuitive, and ultimately more valuable.</p>
       
             <ButtonDownloadCV
-            href="https://github.com/lilducks"
+            href="https://github.com/JellyMofii"
             content="Download CV"
           />
       </div>

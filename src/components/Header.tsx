@@ -74,12 +74,12 @@ const Header = () => {
                 color: "transparent",
               }}
             >
-              LilDucks
+              JellyMofii
             </span> */}
 
             <AnimatedText
-              text="DuckMofii"
-              className="text-4xl text-black relative z-10"
+              text="JellyMofii"
+              className="text-4xl text-black relative z-10 --font-MarlinGeoSQ_Medium"
             />
           </div>
 

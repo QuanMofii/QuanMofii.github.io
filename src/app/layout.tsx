@@ -10,11 +10,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const MarlinGeoSQ_Medium = localFont({
+const MarlinGeoSQ_Regular = localFont({
   src: "./fonts/MarlinGeoSQ-Regular.woff",
   display: "swap",
-  variable: "--Saprona_Regular",
+  variable: "--MarlinGeoSQ_Regular",
 });
+const MarlinGeoSQ_Medium = localFont({
+  src: "./fonts/MarlinGeoSQ-Medium.woff",
+  display: "swap",
+  variable: "--MarlinGeoSQ-Medium",
+});
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lilducks.github.io/portfolio"),
@@ -123,27 +129,27 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Ha Minh Quan",
-              alternateName: "lilducks",
-              url: "https://lilducks.github.io/portfolio",
-              image: "https://lilducks.github.io/portfolio/avatar.jpg",
+              alternateName: "JellyMofii",
+              url: "https://JellyMofii.github.io/",
+              image: "https://JellyMofii.github.io/avatar.jpg",
               jobTitle: "AI Engineer | Chatbot Developer | LLM Specialist",
               worksFor: {
                 "@type": "Organization",
-                name: "lilducks",
+                name: "JellyMofii",
               },
               sameAs: [
-                "https://github.com/lilducks",
+                "https://github.com/JellyMofii",
                 "https://www.linkedin.com/in/ha-minh-quan-b10717294/",
-                "https://x.com/lilducks",
+                "https://x.com/JellyMofii",
               ],
               description:
-                "Hà Minh Quân (lilducks) is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
+                "JellyMoffi also known as Ha Minh Quan is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
             }),
           }}
         />
       </head>
       <body
-        className={`${MarlinGeoSQ_Medium.className}  ${geistMono.className} antialiased text-black `}
+        className={`${MarlinGeoSQ_Regular.className} ${geistMono.className} ${MarlinGeoSQ_Medium.variable}  antialiased text-black `}
       >
         <Header />
         {children}
