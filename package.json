@@ -6,12 +6,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "export": "next export",
+    "postbuild": "npx next-sitemap && touch ./out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out",
-    "postbuild": "next-sitemap"
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "framer-motion": "^12.7.4",

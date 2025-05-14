@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://jellymofii.github.io/
-
-# Sitemaps
-Sitemap: https://jellymofii.github.io/sitemap.xml
