@@ -19,7 +19,7 @@ const HeroSection = () => {
         const screenWidth = window.innerWidth;
 
         const targetWidth = textRef.current.offsetWidth;
-        const targetHeight = screenHeight - textHeight - 90;
+        const targetHeight = screenHeight - textHeight - 95;
 
         const scaleX = targetWidth / screenWidth;
         const scaleY = targetHeight / screenHeight;
@@ -60,14 +60,14 @@ const HeroSection = () => {
       {/* TEXT */}
       <div className="  mx-auto container px-4 mt-0 lg:mt-7 bg-white">
         <div
-          className="flex items-center justify-center text-center w-full"
+          className="flex items-center justify-center  w-full "
           ref={textRef}
         >
           <AnimatedText
             text={
               "I'm JellyMofii, also known as Ha Minh Quan, an AI engineer crafting machines that read, think, answer and surprises you like a human would."
             }
-            className="lg:text-2xl/9.5 text-[3.3vh] xl:text-3xl/11  text-left lg:w-3/5 w-full"
+            className="lg:text-2xl/9.5 text-[3.3vh] xl:text-3xl/11 lg:w-3/5 w-full"
             as="h1"
           />
         </div>
@@ -85,7 +85,7 @@ const HeroSection = () => {
           }}
         >
           <BaseVideo
-            src="/hero/video.mp4"
+            src="/hero/video1.webm"
             className="w-full h-full object-cover"
             style={{
               scale: `${scaleX} ${scaleY} `,

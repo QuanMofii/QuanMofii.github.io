@@ -22,7 +22,7 @@ const ButtonRedirect = ({ href, content }: ButtonRedirectProps) => {
           type: "spring",
           stiffness: 100
         }}
-        className="group relative overflow-hidden rounded-full bg-white cursor-pointer shadow-lg px-6 py-3 transition-colors duration-300 hover:bg-orange-700 w-fit"
+        className="group relative overflow-hidden rounded-full bg-white cursor-pointer shadow-lg px-6 py-3 transition-colors duration-300 hover:bg-sky-500 w-fit"
       >
         <div className="flex items-center justify-center gap-3 transition-transform duration-300 -translate-x-4 group-hover:translate-x-0">
           <div className="text-2xl font-semibold opacity-0 -translate-x-5 transition-all duration-300 group-hover:opacity-100 text-white group-hover:translate-x-0">

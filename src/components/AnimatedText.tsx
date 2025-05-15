@@ -74,7 +74,7 @@ const AnimatedText = ({
             stiffness: 50,
             damping: 10
           }}
-          className="mr-2"
+          className="mr-2 "
         >
           {word}
         </motion.div>

@@ -25,8 +25,8 @@ const MarlinGeoSQ_Medium = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jellymofii.github.io/"),
   title: {
-    default: "JellyMofii",
-    template: "%s | JellyMofii",
+    default: "JellyMofii | Ha Minh Quan Portfolio",
+    template: "JellyMofii",
   },
   description:
     "Portfolio of JellyMofii also known as Ha Minh Quan, AI engineer in NLP, LLMs, and chatbots with projects in chatbot and language tech.",

@@ -8,6 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [logoColor, setLogoColor] = useState("black");
   const menuRef = useRef<HTMLDivElement>(null);
 
   const menuItems = useMemo(
@@ -40,6 +41,22 @@ const Header = () => {
         return false;
       });
       setActiveSection(currentSection || "");
+
+      // Kiểm tra scroll position ở section hero
+      const heroSection = document.getElementById("hero");
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Nếu đang ở section hero và đã scroll được 100vh
+        if (currentSection === "hero" && Math.abs(heroRect.top) >= windowHeight) {
+          setLogoColor("white");
+        } else if (currentSection === "project") {
+          setLogoColor("white");
+        } else {
+          setLogoColor("black");
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -79,7 +96,11 @@ const Header = () => {
 
             <AnimatedText
               text="JellyMofii"
-              className="text-4xl text-black relative z-10 --font-MarlinGeoSQ_Medium"
+              className="text-4xl relative z-10 --font-MarlinGeoSQ_Medium"
+              style={{
+                color: logoColor,
+                transition: "color 0.5s ease-in-out"
+              }}
             />
           </div>
 

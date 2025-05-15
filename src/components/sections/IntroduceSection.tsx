@@ -22,17 +22,17 @@ const IntroduceSection = () => {
               type: "tween",
               ease: "easeInOut",
               duration: 0.5,
-              delay: 1
+              delay: 0.2
             },
             x: {
               type: "tween",
               ease: "easeInOut",
               duration: 0.8,
-              delay: 1.5
+              delay: 0.7
             },
             opacity: {
               duration: 0.5,
-              delay: 1
+              delay: 0.2
             }
           }}
           className="self-center"
@@ -47,17 +47,17 @@ const IntroduceSection = () => {
               type: "tween",
               ease: "easeInOut",
               duration: 0.5,
-              delay: 1
+              delay: 0.2
             },
             x: {
               type: "tween",
               ease: "easeInOut",
               duration: 0.8,
-              delay: 1.5
+              delay: 0.7
             },
             opacity: {
               duration: 0.5,
-              delay: 1
+              delay: 0.2
             }
           }}
         >
@@ -67,7 +67,7 @@ const IntroduceSection = () => {
       <div className="w-full lg:w-1/2 self-end h-screen text-xl md:text-2xl">
         <p>I&apos;m an AI engineer driven by a passion for language, cognition, 
           and the potential of intelligent systems. With a deep foundation in
-          natural language processing, large language models, autonomous agents,
+          natural language processing, large language models, agents,
           my work aims to create accessible, high-impact AI language solutions. 
           </p> 
         <p className="mt-10 mb-20"> My vision is to bring intelligence closer to daily 

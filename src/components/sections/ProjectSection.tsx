@@ -56,7 +56,7 @@ const ProjectSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col overflow-hidden bg-black "
+      className="min-h-screen flex flex-col  bg-black relative"
       id="project"
     >
       <div className="container mx-auto px-4 xl:px-7 pt-15 text-white bg-black z-50 ">
@@ -69,13 +69,14 @@ const ProjectSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-11 ">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-x-11 gap-y-20 mt-50">
           {projects.map((project, index) => (
             <Link
               href={project.githubUrl}
               key={project.id}
               target="_blank"
               rel="noopener noreferrer"
+              className={`${index % 2 === 1 ? 'md:mt-[16vw]' : ''}`}
             >
               <AnimatedDiv
                 delay={index * 0.2}
@@ -119,13 +120,14 @@ const ProjectSection = () => {
             </Link>
           ))}
         </div>
-        <div className="flex justify-center w-full h-auto mt-40 mb-40">
+        <div className="flex justify-center w-full h-auto mt-40 mb-20">
           <ButtonRedirect
             href="https://github.com/JellyMofii"
             content="View All Projects"
           />
         </div>
       </div>
+      
     </section>
   );
 };
