@@ -65,14 +65,14 @@ const HeroSection = () => {
             }
             className="lg:text-2xl/9 text-[3.3vh] xl:text-3xl/11 lg:w-3/5 w-full"
             as="h1"
-            delay={3.4}
+            delay={2.4}
             once={true}
           />
         </div>
       </div>
 
       {/* VIDEO */}
-      <AnimatedDiv withRotate={false} delay={3.4} className="w-full h-screen sticky top-0 m-0 overflow-hidden mx-auto">
+      <AnimatedDiv withRotate={false} delay={2.4} className="w-full h-screen sticky top-0 m-0 overflow-hidden mx-auto">
         <motion.div
           className="relative h-full w-full"
           style={{
