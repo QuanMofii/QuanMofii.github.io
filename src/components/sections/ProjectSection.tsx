@@ -24,14 +24,14 @@ const projects: Project[] = [
       "Mathematical format document",
       "Translation Preserved Formats",
     ],
-    githubUrl: "https://github.com/JellyMofii/PAPERY",
+    githubUrl: "https://github.com/QuanMofii/PAPERY",
   },
   {
     id: 2,
     title: "Predicting Vietnamese Stock Prices",
     image: "/projects/project2.png",
     tags: ["ML", "DL", "Time Series", "ARIMA", "LSTM"],
-    githubUrl: "https://github.com/JellyMofii/Predicting_Vietnamese_Stock",
+    githubUrl: "https://github.com/QuanMofii/Predicting_Vietnamese_Stock",
   },
   {
     id: 3,
@@ -39,14 +39,14 @@ const projects: Project[] = [
     image: "/projects/project3.png",
     tags: ["ML", "Data Cleaning", "Data Analyst", "Prediction"],
     githubUrl:
-      "https://github.com/JellyMofii/Predict_potential_customers_for_the_banks_marketing_campaign",
+      "https://github.com/QuanMofii/Predict_potential_customers_for_the_banks_marketing_campaign",
   },
   {
     id: 4,
     title: "Chatbot Multi-Agent Company",
     image: "/projects/project4.png",
     tags: ["Chatbot", "LLM Local & GPT", "Multi-Agent workflow"],
-    githubUrl: "https://github.com/JellyMofii/Chatbot_multiagent",
+    githubUrl: "https://github.com/QuanMofii/Chatbot_multiagent",
   },
 ];
 
@@ -122,7 +122,7 @@ const ProjectSection = () => {
         </div>
         <div className="flex justify-center w-full h-auto mt-40 mb-20">
           <ButtonRedirect
-            href="https://github.com/JellyMofii"
+            href="https://github.com/QuanMofii"
             content="View All Projects"
           />
         </div>

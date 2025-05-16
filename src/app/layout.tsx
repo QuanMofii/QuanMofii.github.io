@@ -24,17 +24,17 @@ const MarlinGeoSQ_Medium = localFont({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jellymofii.github.io/"),
+  metadataBase: new URL("https://quanmofii.github.io/"),
   title: {
-    default: "Ha Minh Quan - Portfolio",
-    template: "Ha Minh Quan",
+    default: "QuanMofii - Ha Minh Quan Portfolio",
+    template: "QuanMofii",
   },
   description:
-    "Portfolio of Ha Minh Quan also known as JellyMofii, AI engineer in NLP, LLMs, and chatbots with projects in chatbot and language tech.",
+    "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots with projects in chatbot and language tech.",
   keywords: [
     "Hà Minh Quân",
     "Ha Minh Quan",
-    "JellyMofii",
+    "QuanMofii",
     "AI Engineer",
     "Chatbot Developer",
     "LLM Specialist",
@@ -45,18 +45,18 @@ export const metadata: Metadata = {
     "Deploy AI",
     "Large Language Models",
     "Conversational AI",
-    "Portfolio Ha Minh Quan",
-    "JellyMofii Portfolio",
+    "Ha Minh Quan Portfolio",
+    "QuanMofii Portfolio",
     "Vietnam AI Engineer",
   ],
   authors: [
     {
-      name: "JellyMofii",
-      url: "https://jellymofii.github.io/",
+      name: "QuanMofii",
+      url: "https://quanmofii.github.io/",
     },
   ],
-  creator: "JellyMofii",
-  publisher: "JellyMofii",
+  creator: "quanmofii",
+  publisher: "quanmofii",
   alternates: {
     canonical: "/",
     languages: {
@@ -67,27 +67,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jellymofii.github.io/",
-    siteName: "JellyMofii | Ha Minh Quan Portfolio",
-    title: "JellyMofii | Ha Minh Quan Portfolio",
+    url: "https://quanmofii.github.io/",
+    siteName: "QuanMofii - Ha Minh Quan Portfolio",
+    title: "QuanMofii - Ha Minh Quan Portfolio",
     description:
-      "Portfolio of JellyMofii also known as Ha Minh Quan, AI engineer in NLP, LLMs, and chatbots.",
+      "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
     images: [
       {
-        url: "https://jellymofii.github.io/avatar.jpg",
+        url: "https://quanmofii.github.io/avatar.jpg",
         width: 1200,
         height: 630,
-        alt: "JellyMoffi also known as Ha Minh Quan - AI Engineer Portfolio",
+        alt: "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "JellyMofii | Ha Minh Quan Portfolio",
+    title: "QuanMofii - Ha Minh Quan Portfolio",
     description:
-      "Portfolio of JellyMofii also known as Ha Minh Quan, AI engineer in NLP, LLMs, and chatbots.",
-    creator: "@JellyMofii",
-    images: ["https://jellymofii.github.io/avatar.jpg"],
+      "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
+    creator: "@QuanMofii",
+    images: ["https://quanmofii.github.io/avatar.jpg"],
   },
   robots: {
     index: true,
@@ -130,21 +130,21 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Ha Minh Quan",
-              alternateName: "JellyMofii",
-              url: "https://JellyMofii.github.io/",
-              image: "https://JellyMofii.github.io/avatar.jpg",
+              alternateName: "QuanMofii",
+              url: "https://QuanMofii.github.io/",
+              image: "https://QuanMofii.github.io/avatar.jpg",
               jobTitle: "AI Engineer | Chatbot Developer | LLM Specialist",
               worksFor: {
                 "@type": "Organization",
-                name: "JellyMofii",
+                name: "QuanMofii",
               },
               sameAs: [
-                "https://github.com/JellyMofii",
+                "https://github.com/QuanMofii",
                 "https://www.linkedin.com/in/ha-minh-quan-b10717294/",
-                "https://x.com/JellyMofii",
+                "https://x.com/QuanMofii",
               ],
               description:
-                "Ha Minh Quan also known as JellyMoffi is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
+                "Ha Minh Quan also known as QuanMofii is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
             }),
           }}
         />

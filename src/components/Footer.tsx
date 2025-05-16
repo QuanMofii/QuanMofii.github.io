@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="col-span-1 grid  md:grid-rows-[1fr_1fr_1fr] ">
             <div className="flex flex-col w-fit h-fit">
               <Link
-                href="https://github.com/JellyMofii"
+                href="https://github.com/QuanMofii"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -71,7 +71,7 @@ const Footer = () => {
                 <AnimatedText text="@Facebook" />
               </Link>
               <Link
-                href="https://www.instagram.com/JellyMofii"
+                href="https://www.instagram.com/QuanMofii"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -95,12 +95,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 md:gap-8 mt-8 mb-4 overflow-hidden w-full ">
           <div className="col-span-1 md:col-span-2 text-center ">
             <Link
-              href="https://JellyMofii.github.io/"
+              href="https://github.com/QuanMofii/QuanMofii.github.io"
               target="_blank"
               rel="noopener noreferrer"
             >
               <AnimatedText
-                text="#jellymofii.github.io/"
+                text="#QuanMofii.github.io/"
                 className="text-lg break-words truncate"
               />
             </Link>
@@ -109,7 +109,7 @@ const Footer = () => {
             <AnimatedText text="Built by Quan❤️" className="text-lg" />
           </div>
           <div className="col-span-1 flex md:justify-end">
-            <AnimatedText text="©Copyright by JellyMofii" className="text-lg " />
+            <AnimatedText text="©Copyright by QuanMofii" className="text-lg " />
           </div>
         </div>
       </div>

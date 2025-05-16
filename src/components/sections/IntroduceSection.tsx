@@ -3,6 +3,7 @@ import AnimatedText from "@/components/AnimatedText";
 import { motion, useInView } from "framer-motion";
 import ButtonDownloadCV from "@/components/ButtonDownloadCV";
 import BaseVideo from "@/components/BaseVideo";
+import {Terminal  } from "lucide-react";
 
 const InfoItem = ({ label, value }: { label: string; value: string }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -21,9 +22,9 @@ const InfoItem = ({ label, value }: { label: string; value: string }) => {
           paddingRight: isHovered ? 30 : 0
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="border-b-2 h-[10vh] flex justify-end items-end"
+        className="border-b-2 h-[10vh] flex justify-between items-end"
       >
-        <p className="truncate max-w-full">{label}</p>
+       <Terminal strokeWidth={1.1} style={{ height: '7.4vh', width: '7.4vh' ,}}  /> <p className="truncate max-w-full">{label}</p>
       </motion.div>
       <motion.div
         initial={{ y: 100 }}
@@ -34,7 +35,7 @@ const InfoItem = ({ label, value }: { label: string; value: string }) => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="absolute top-0 left-0 h-[10vh] flex justify-end items-end bg-black w-full text-white"
       >
-        <p className="truncate max-w-full pl-[30px]">{value}</p>
+        <p className="truncate max-w-full pl-[30px] my-auto">{value}</p>
       </motion.div>
     </div>
   );
@@ -50,8 +51,8 @@ const IntroduceSection = () => {
   const infoItems = [
     { label: "Country", value: "Viet Nam" },
     { label: "Year Of Birth", value: "2002" },
-    { label: "Degree Type", value: "AI Engineer" },
     { label: "Graduation School", value: "Nguyen Tat Thanh University" },
+    { label: "Year Experience", value: "1 Year +" },
   ];
 
   return (
@@ -135,9 +136,9 @@ const IntroduceSection = () => {
                 ease: "easeInOut",
 
               }}
-              className="text-2xl font-medium  w-full flex flex-row justify-between"
+              className="text-3xl font-medium  w-full flex flex-row justify-between"
             >
-              <div>x</div><div>x</div><div>x</div><div>x</div>
+              <div>+</div><div>+</div><div>+</div><div>+</div>
             </motion.div>
 
             <BaseVideo
@@ -156,9 +157,9 @@ const IntroduceSection = () => {
                 type: "spring",
                 ease: "easeInOut",
               }}
-               className="text-2xl font-medium  w-full flex flex-row justify-between"
+               className="text-3xl font-medium  w-full flex flex-row justify-between"
             >
-              <div>x</div><div>x</div><div>x</div><div>x</div>
+               <div>+</div><div>+</div><div>+</div><div>+</div>
             </motion.div>
           </div>
         </div>
@@ -179,7 +180,7 @@ const IntroduceSection = () => {
             </p>
 
             <ButtonDownloadCV
-              href="https://github.com/JellyMofii"
+              href="https://github.com/QuanMofii"
               content="Download CV"
             />
           </div>

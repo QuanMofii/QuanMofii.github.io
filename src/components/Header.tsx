@@ -93,11 +93,11 @@ const Header = () => {
                 color: "transparent",
               }}
             >
-              JellyMofii
+              QuanMofii
             </span> */}
 
             <AnimatedText
-              text="JellyMofii"
+              text="QuanMofii"
               className="text-4xl relative z-10 --font-MarlinGeoSQ_Medium"
               style={{
                 color: logoColor,
@@ -167,7 +167,7 @@ const Header = () => {
 
                   {/* GitHub Link */}
                   <motion.a
-                    href="https://github.com/JellyMofii"
+                    href="https://github.com/QuanMofii"
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, y: -20, rotate: 5 }}
