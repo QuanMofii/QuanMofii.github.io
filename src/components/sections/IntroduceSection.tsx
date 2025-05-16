@@ -147,7 +147,7 @@ const IntroduceSection = () => {
             </p>
 
             <ButtonDownloadCV
-              href="https://github.com/QuanMofii"
+              
               content="Download CV"
             />
           </div>

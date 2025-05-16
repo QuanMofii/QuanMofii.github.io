@@ -74,7 +74,7 @@ export const metadata: Metadata = {
       "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
     images: [
       {
-        url: "https://quanmofii.github.io/avatar.jpg",
+        url: "https://quanmofii.github.io/share_img.png",
         width: 1200,
         height: 630,
         alt: "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     description:
       "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
     creator: "@QuanMofii",
-    images: ["https://quanmofii.github.io/avatar.jpg"],
+    images: ["https://quanmofii.github.io/share_img.png"],
   },
   robots: {
     index: true,
