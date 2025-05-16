@@ -102,7 +102,7 @@ const Header = () => {
               style={{
                 color: logoColor,
                 transition: "color 0.5s ease-in-out"
-              }}
+              }} delay={3.4} once={true}
             />
           </div>
 

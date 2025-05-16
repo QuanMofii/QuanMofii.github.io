@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-// import LoadingScreen from "@/components/LoadingScreen";
+import LoadingScreen from "@/components/LoadingScreen";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -154,7 +154,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        {/* <LoadingScreen /> */}
+        <LoadingScreen />
         <Footer />
       </body>
     </html>

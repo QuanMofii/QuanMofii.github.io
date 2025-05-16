@@ -1,26 +1,23 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import { Bouncy } from "ldrs/react";
+import { Reuleaux } from "ldrs/react";
+import "ldrs/react/Bouncy.css";
+import 'ldrs/react/Reuleaux.css'
+
 
 export default function LoadingScreen() {
   const [showLoader, setShowLoader] = useState(true);
-  const [fadeIn, setFadeIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
 
   useEffect(() => {
-    // Bắt đầu fade in sau 0.5s
-    const fadeInTimeout = setTimeout(() => {
-      setFadeIn(true);
-    }, 500);
-
-    // Giả lập loading xong sau 3s
     const loadingTimeout = setTimeout(() => {
-      setAnimateOut(true); // bắt đầu vén màn lên
-      setTimeout(() => setShowLoader(false), 1000); // chờ animation hoàn tất
+      setAnimateOut(true);
+      setTimeout(() => setShowLoader(false), 1000);
     }, 3000);
 
     return () => {
-      clearTimeout(fadeInTimeout);
       clearTimeout(loadingTimeout);
     };
   }, []);
@@ -29,17 +26,25 @@ export default function LoadingScreen() {
 
   return (
     <div
-      className={`fixed inset-0 bg-white z-50 flex items-center justify-center overflow-hidden transition-all duration-1000
-        ${animateOut ? 'translate-y-full' : 'translate-y-0'}`}
+      className={`fixed inset-0 bg-white z-50 flex items-center justify-center overflow-hidden
+        ${animateOut ? "h-0" : "h-screen"} transition-all duration-1000`}
     >
-      <div
-        className={`transition-all duration-1000 flex items-center justify-center flex-col
-          ${fadeIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
-          ${animateOut ? 'opacity-0 -translate-y-10' : ''}
-        `}
-      >
-        <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-400 border-t-transparent" />
-        <p className="mt-4 text-gray-500 text-sm">Đang tải...</p>
+      <div className={`flex flex-col items-center justify-center gap-4 transition-opacity duration-500
+        ${animateOut ? "opacity-0" : "opacity-100"}`}>
+        <Reuleaux
+          size="37"
+          stroke="5"
+          strokeLength="0.15"
+          bgOpacity="0.1"
+          speed="1.2"
+          color="black"
+          
+        />
+        <Bouncy 
+          size="45" 
+          speed="1.75" 
+          color="black" 
+        />
       </div>
     </div>
   );

@@ -9,6 +9,8 @@ interface AnimatedTextProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div'
   withRotate?: boolean
   style?: React.CSSProperties;
+  delay?: number;
+  once?: boolean;
 }
 
 const AnimatedText = ({ 
@@ -16,7 +18,9 @@ const AnimatedText = ({
   className = "", 
   as = 'div',
   withRotate = true ,
-  style 
+  style,
+  delay = 0,
+  once = false
 }: AnimatedTextProps) => {
   const [isVisible, setIsVisible] = useState(false)
   const words = text.match(/\S+\s*/g) || []  
@@ -28,7 +32,7 @@ const AnimatedText = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-        } else {
+        } else if (!once) {
           setIsVisible(false)
         }
       },
@@ -44,7 +48,7 @@ const AnimatedText = ({
         observer.unobserve(element)
       }
     }
-  }, [])
+  }, [once])
 
   const Component = as
 
@@ -68,7 +72,7 @@ const AnimatedText = ({
             ...(withRotate && { rotate: 5 })
           }}
           transition={{ 
-            delay: index * 0.1,
+            delay: (index * 0.1) + delay,
             duration: 0.2,
             type: "spring",
             stiffness: 50,

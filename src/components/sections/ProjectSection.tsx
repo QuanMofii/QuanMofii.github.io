@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ButtonRedirect from "../ButtonRedirect";
 import AnimatedDiv from "@/components/AnimatedDiv";
+import GradientBackground from "../GradientBackground";
 
 interface Project {
   id: number;
@@ -56,10 +57,12 @@ const ProjectSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col  bg-black relative overflow-hidden"
+      className="min-h-screen flex flex-col   relative overflow-hidden"
       id="project"
     >
-      <div className="container mx-auto px-4 xl:px-7 pt-15 text-white bg-black z-50 ">
+       <GradientBackground />
+   
+      <div className="container mx-auto px-4 xl:px-7 pt-15 pb-30 text-white  z-50 ">
         <div className="flex flex-col lg:flex-row justify-between mt-20 mb-30">
           <AnimatedText text={"My Work"} className="text-[20vw] md:text-9xl" />
           <div className="md:text-base mt-5 md:mt-0 flex flex-col items-end  justify-end mb-3">
@@ -76,7 +79,7 @@ const ProjectSection = () => {
               key={project.id}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${index % 2 === 1 ? 'md:mt-[16vw]' : ''}`}
+              className={`${index % 2 === 1 ? 'md:mt-[16vw]' : ''} h-fit`}
             >
               <AnimatedDiv
                 delay={index * 0.2}
