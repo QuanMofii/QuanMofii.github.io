@@ -35,7 +35,7 @@ const Footer = () => {
           <div className="col-span-1 flex flex-col items-start justify-start">
             <div className="">
               <AnimatedText text="Tan Binh, HCM" />
-              <AnimatedText text="Call 0376316144" />
+              <AnimatedText text="+84 0376316144" />
             </div>
 
             <div className="md:hidden mt-5">

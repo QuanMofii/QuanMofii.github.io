@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+// import LoadingScreen from "@/components/LoadingScreen";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -25,11 +26,11 @@ const MarlinGeoSQ_Medium = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jellymofii.github.io/"),
   title: {
-    default: "JellyMofii | Ha Minh Quan Portfolio",
-    template: "JellyMofii",
+    default: "Ha Minh Quan - Portfolio",
+    template: "Ha Minh Quan",
   },
   description:
-    "Portfolio of JellyMofii also known as Ha Minh Quan, AI engineer in NLP, LLMs, and chatbots with projects in chatbot and language tech.",
+    "Portfolio of Ha Minh Quan also known as JellyMofii, AI engineer in NLP, LLMs, and chatbots with projects in chatbot and language tech.",
   keywords: [
     "Hà Minh Quân",
     "Ha Minh Quan",
@@ -143,7 +144,7 @@ export default function RootLayout({
                 "https://x.com/JellyMofii",
               ],
               description:
-                "JellyMoffi also known as Ha Minh Quan is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
+                "Ha Minh Quan also known as JellyMoffi is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
             }),
           }}
         />
@@ -153,6 +154,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        {/* <LoadingScreen /> */}
         <Footer />
       </body>
     </html>

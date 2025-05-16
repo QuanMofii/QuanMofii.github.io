@@ -56,20 +56,20 @@ const ProjectSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col  bg-black relative"
+      className="min-h-screen flex flex-col  bg-black relative overflow-hidden"
       id="project"
     >
       <div className="container mx-auto px-4 xl:px-7 pt-15 text-white bg-black z-50 ">
         <div className="flex flex-col lg:flex-row justify-between mt-20 mb-30">
           <AnimatedText text={"My Work"} className="text-[20vw] md:text-9xl" />
-          <div className="md:text-2xl text-[4.2vw] mt-5 md:mt-0 flex flex-col items-end  justify-center">
+          <div className="md:text-base mt-5 md:mt-0 flex flex-col items-end  justify-end mb-3">
             <AnimatedText text="I build machines that think" />
             <AnimatedText text="Frontend design is my obsession" />
             <AnimatedText text="I aspire to master system architecture." />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-x-11 gap-y-20 mt-50">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-x-11 gap-y-20 mt-50 overflow-hidden">
           {projects.map((project, index) => (
             <Link
               href={project.githubUrl}
@@ -96,7 +96,7 @@ const ProjectSection = () => {
                 </div>
 
                 <div className="py-6">
-                  <div className="flex items-center mb-3 overflow-x-auto whitespace-nowrap scrollbar-hide">
+                  <div className="flex items-center mb-3 whitespace-nowrap  ">
                     {project.tags.map((tag, i) => (
                       <div key={i} className="flex items-center shrink-0">
                         <span className="text-sm">{tag}</span>

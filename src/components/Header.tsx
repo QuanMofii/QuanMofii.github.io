@@ -42,15 +42,17 @@ const Header = () => {
       });
       setActiveSection(currentSection || "");
 
-      // Kiểm tra scroll position ở section hero
       const heroSection = document.getElementById("hero");
       if (heroSection) {
         const heroRect = heroSection.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         
-        // Nếu đang ở section hero và đã scroll được 100vh
-        if (currentSection === "hero" && Math.abs(heroRect.top) >= windowHeight) {
-          setLogoColor("white");
+        if (currentSection === "hero") {
+          if (Math.abs(heroRect.top) >= windowHeight && Math.abs(heroRect.top) < windowHeight * 7) {
+            setLogoColor("white");
+          } else {
+            setLogoColor("black");
+          }
         } else if (currentSection === "project") {
           setLogoColor("white");
         } else {
@@ -181,7 +183,7 @@ const Header = () => {
                    
                      
                       <motion.div 
-                      className="px-6 py-4 flex items-center justify-between gap-2 text-white group"
+                      className="px-6 py-4 flex items-center justify-between gap-2 text-white group hover:px-8 transition-all"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
              
