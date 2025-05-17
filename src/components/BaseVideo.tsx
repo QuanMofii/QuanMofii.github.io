@@ -15,11 +15,17 @@ const BaseVideo = ({ src, className = "" ,style={}}: BaseVideoProps) => {
     <video
       src={fullSrc}
       className={className}
-      style={style}
+      style={{
+        ...style,
+        pointerEvents: "none",
+      }}
       autoPlay
       muted
       loop
       playsInline
+      controls={false} 
+      disablePictureInPicture 
+      controlsList="nodownload nofullscreen noremoteplayback" 
     />
   )
 }
