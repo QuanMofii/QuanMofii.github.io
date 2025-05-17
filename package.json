@@ -1,7 +1,7 @@
 {
-  "name": "jellymofii-portfolio",
+  "name": "quanmofii-portfolio",
   "version": "0.1.0",
-  "homepage": "https://jellymofii.github.io/",
+  "homepage": "https://quanmofii.github.io/",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
