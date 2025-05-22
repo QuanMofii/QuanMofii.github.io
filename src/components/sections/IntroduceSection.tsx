@@ -145,11 +145,13 @@ const IntroduceSection = () => {
               My vision is to bring intelligence closer to daily life—making it
               more human, more intuitive, and ultimately more valuable.
             </p>
-
-            <ButtonDownloadCV
+              <div className="">
+              <ButtonDownloadCV
               
               content="Download CV"
             />
+              </div>
+           
           </div>
 
           <div ref={bottomViewRef} className="h-[100vh] flex items-center justify-center">

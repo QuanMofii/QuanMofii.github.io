@@ -26,11 +26,11 @@ const MarlinGeoSQ_Medium = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://quanmofii.github.io/"),
   title: {
-    default: "QuanMofii - Ha Minh Quan Portfolio",
-    template: "QuanMofii",
+    default: "Hà Minh Quân Portfolio | QuanMofii",
+    template: "Hà Minh Quân",
   },
   description:
-    "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots with projects in chatbot and language tech.",
+    "Hà Minh Quân Portfolio | QuanMofii, AI engineer in NLP, LLMs, and chatbots with projects in chatbot and language tech.",
   keywords: [
     "Hà Minh Quân",
     "Ha Minh Quan",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     "Deploy AI",
     "Large Language Models",
     "Conversational AI",
-    "Ha Minh Quan Portfolio",
+    "Hà Minh Quân Portfolio",
     "QuanMofii Portfolio",
     "Vietnam AI Engineer",
   ],
@@ -55,37 +55,37 @@ export const metadata: Metadata = {
       url: "https://quanmofii.github.io/",
     },
   ],
-  creator: "quanmofii",
-  publisher: "quanmofii",
+  creator: "QuanMofii",
+  publisher: "QuanMofii",
   alternates: {
     canonical: "/",
     languages: {
-      "en-US": "/en",
       "vi-VN": "/vi",
+      "en-US": "/en",
     },
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "vi-VN",
     url: "https://quanmofii.github.io/",
-    siteName: "QuanMofii - Ha Minh Quan Portfolio",
-    title: "QuanMofii - Ha Minh Quan Portfolio",
+    siteName: "Hà Minh Quân Portfolio | QuanMofii",
+    title: "Hà Minh Quân Portfolio | QuanMofii",
     description:
-      "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
+      "Hà Minh Quân Portfolio | QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
     images: [
       {
         url: "https://quanmofii.github.io/share_img.png",
         width: 1200,
         height: 630,
-        alt: "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
+        alt: "Hà Minh Quân Portfolio | QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuanMofii - Ha Minh Quan Portfolio",
+    title: "Hà Minh Quân Portfolio | QuanMofii",
     description:
-      "Portfolio of Ha Minh Quan also known as QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
+      "Hà Minh Quân Portfolio | QuanMofii, AI engineer in NLP, LLMs, and chatbots.",
     creator: "@QuanMofii",
     images: ["https://quanmofii.github.io/share_img.png"],
   },
@@ -144,7 +144,7 @@ export default function RootLayout({
                 "https://x.com/QuanMofii",
               ],
               description:
-                "Ha Minh Quan also known as QuanMofii is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
+                "Hà Minh Quân is an AI Engineer dedicated to developing Chatbots, LLMs, AI Agents, and NLP-driven intelligent solutions.",
             }),
           }}
         />

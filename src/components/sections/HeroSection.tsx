@@ -61,7 +61,7 @@ const HeroSection = () => {
         <div className="flex items-center justify-center w-full" ref={textRef}>
           <AnimatedText
             text={
-              "I'm Ha Minh Quan, an AI engineer crafting machines that read, think, answer and surprises you like a human would."
+              "I'm Hà Minh Quân, an AI engineer crafting machines that read, think, answer and surprises you like a human would."
             }
             className="lg:text-2xl/9 text-[3.3vh] xl:text-3xl/11 lg:w-3/5 w-full"
             as="h1"
