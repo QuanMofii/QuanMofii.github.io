@@ -26,7 +26,7 @@ const MarlinGeoSQ_Medium = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://quanmofii.github.io/"),
   title: {
-    default: "QuanMofii - Hà Minh Quân Portfolio",
+    default: "QuanMofii",
     template: "Hà Minh Quân",
   },
   description:
